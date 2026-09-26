@@ -289,6 +289,24 @@
     }
   });
 
+  /* ───────────── CV download ─────────────
+     On a normal host the plain download link works. Inside the Claude
+     artifact viewer, files must go through its downloads capability. */
+  let downloads = null;
+  window.claude?.use?.("downloads").then((d) => (downloads = d), () => {});
+  $$("a[download]").forEach((a) =>
+    a.addEventListener("click", async (e) => {
+      if (!downloads) return;
+      e.preventDefault();
+      try {
+        const blob = await (await fetch(a.href)).blob();
+        await downloads.save({ filename: a.href.split("/").pop(), data: blob });
+      } catch (err) {
+        if (err?.code !== "declined") window.open(a.href, "_blank", "noopener");
+      }
+    })
+  );
+
   /* ───────────── Project filters ───────────── */
   const filters = $$(".filter");
   const projects = $$(".project");

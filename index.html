@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"></div></div>
+  <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span class="cursor__label"></span></div></div>
   <div class="grain" aria-hidden="true"></div>
   <div class="progress" aria-hidden="true"></div>
 
@@ -75,9 +75,21 @@
           <a href="#contact" class="btn btn--ghost" data-magnetic>Me contacter</a>
         </div>
       </div>
+      <a href="#realisations" class="badge" aria-label="Voir les réalisations" data-magnetic>
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <defs><path id="badge-circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" /></defs>
+          <text><textPath href="#badge-circle">Portfolio · Hamza Denis · BUT TC · Colmar ·</textPath></text>
+        </svg>
+        <span class="badge__core">↘</span>
+      </a>
       <a href="#profil" class="hero__scroll" aria-label="Défiler vers le profil">
         <span>Scroll</span><i></i>
       </a>
+    </section>
+
+    <!-- ═════════════ MANIFESTE ═════════════ -->
+    <section class="manifesto" aria-label="En une phrase">
+      <p class="manifesto__text" data-scrub>Chaque client est une rencontre, chaque vente est une preuve. <em>Je transforme le terrain en résultats concrets.</em></p>
     </section>
 
     <!-- ═════════════ PROFIL ═════════════ -->
@@ -100,7 +112,7 @@
           </div>
         </div>
         <div class="about__text">
-          <h3 class="display reveal">Le goût du terrain, <em>l'esprit du résultat.</em></h3>
+          <h3 class="display reveal" data-words>Le goût du terrain, <em>l'esprit du résultat.</em></h3>
           <div class="about__paras">
             <p class="reveal">J'ai 20 ans, je vis à Colmar et je suis étudiant en BUT Techniques de Commercialisation. J'y développe des compétences en marketing, négociation et communication, à travers des projets concrets, des études de marché et des mises en situation professionnelles.</p>
             <p class="reveal">En parallèle, je me confronte au terrain&nbsp;: vente en magasin, accueil client, prospection immobilière et pilotage de campagnes publicitaires. Je parle <strong>français</strong>, <strong>anglais</strong> et <strong>bosniaque</strong>.</p>
@@ -140,7 +152,7 @@
         <span class="section__index">02</span>
         <h2 class="section__label">Parcours scolaire</h2>
       </div>
-      <h3 class="display reveal">Des bases solides, <em>un cap clair.</em></h3>
+      <h3 class="display reveal" data-words>Des bases solides, <em>un cap clair.</em></h3>
       <div class="edu">
         <article class="card edu__card reveal">
           <div class="edu__top">
@@ -172,7 +184,7 @@
         <span class="section__index">03</span>
         <h2 class="section__label">Expériences</h2>
       </div>
-      <h3 class="display reveal">Sur le terrain, <em>des résultats mesurables.</em></h3>
+      <h3 class="display reveal" data-words>Sur le terrain, <em>des résultats mesurables.</em></h3>
       <div class="timeline">
         <div class="timeline__line"><i></i></div>
 
@@ -245,7 +257,7 @@
         <h2 class="section__label">Réalisations</h2>
       </div>
       <div class="projects__head">
-        <h3 class="display reveal">Une sélection <em>de mes projets.</em></h3>
+        <h3 class="display reveal" data-words>Une sélection <em>de mes projets.</em></h3>
         <div class="filters reveal" role="tablist" aria-label="Filtrer les réalisations">
           <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Tout</button>
           <button class="filter" data-filter="com" role="tab" aria-selected="false">Communication</button>
@@ -257,7 +269,7 @@
 
       <div class="projects__grid">
         <!-- Meta Ads -->
-        <article class="card project project--wide reveal" data-cat="digital" tabindex="0" data-tilt>
+        <article class="card project project--wide reveal" data-cat="digital" tabindex="0" data-tilt data-cursor="Voir">
           <div class="project__media project__media--screen">
             <img src="assets/img/mkt-meta-ads.webp" alt="Tableau de bord Meta Ads de la campagne Groupimmo" loading="lazy" />
           </div>
@@ -284,7 +296,7 @@
         </article>
 
         <!-- Lanméa -->
-        <article class="card project reveal" data-cat="mkt" tabindex="0" data-tilt>
+        <article class="card project reveal" data-cat="mkt" tabindex="0" data-tilt data-cursor="Voir">
           <div class="project__media project__media--soft">
             <img src="assets/img/mkt-lanmea.webp" alt="Savons Lanméa à base d'algues de sargasse" loading="lazy" />
           </div>
@@ -310,7 +322,7 @@
         </article>
 
         <!-- Concours d'éloquence -->
-        <article class="card project reveal" data-cat="com" tabindex="0" data-tilt>
+        <article class="card project reveal" data-cat="com" tabindex="0" data-tilt data-cursor="Voir">
           <div class="project__media project__media--duo">
             <img src="assets/img/com-eloquence.webp" alt="Affiche du Concours d'éloquence" loading="lazy" />
             <img src="assets/img/com-eloquence-j1.webp" alt="Affiche J-1 du Concours d'éloquence" loading="lazy" />
@@ -335,7 +347,7 @@
         </article>
 
         <!-- Instagram -->
-        <article class="card project reveal" data-cat="com" tabindex="0" data-tilt>
+        <article class="card project reveal" data-cat="com" tabindex="0" data-tilt data-cursor="Voir">
           <div class="project__media project__media--duo">
             <img src="assets/img/com-noel.webp" alt="Publication Instagram sur le marché de Noël de Colmar" loading="lazy" />
             <img src="assets/img/com-concours.webp" alt="Publication Instagram du jeu concours" loading="lazy" />
@@ -360,7 +372,7 @@
         </article>
 
         <!-- Feyel -->
-        <article class="card project reveal" data-cat="vente" tabindex="0" data-tilt>
+        <article class="card project reveal" data-cat="vente" tabindex="0" data-tilt data-cursor="Voir">
           <div class="project__media project__media--soft">
             <img src="assets/img/vente-feyel.webp" alt="Catalogue Frédéric Feyel" loading="lazy" />
           </div>
@@ -380,7 +392,7 @@
         </article>
 
         <!-- Performances vente -->
-        <article class="card project project--wide reveal" data-cat="vente" tabindex="0" data-tilt>
+        <article class="card project project--wide reveal" data-cat="vente" tabindex="0" data-tilt data-cursor="Voir">
           <div class="project__media project__media--soft">
             <img src="assets/img/vente-cgr-kpi.webp" alt="Tableau des performances de vente au CGR" loading="lazy" />
           </div>
@@ -423,7 +435,7 @@
         <span class="section__index">05</span>
         <h2 class="section__label">À propos de moi</h2>
       </div>
-      <h3 class="display reveal">Ce qui me fait <em>avancer.</em></h3>
+      <h3 class="display reveal" data-words>Ce qui me fait <em>avancer.</em></h3>
       <div class="bento">
         <article class="passion passion--kosovo reveal">
           <img src="assets/img/passion-kosovo.webp" alt="Prizren, Kosovo" loading="lazy" />
@@ -467,7 +479,7 @@
         <span class="section__index">06</span>
         <h2 class="section__label">Contact</h2>
       </div>
-      <h3 class="contact__title reveal">Parlons de votre <em>prochain projet.</em></h3>
+      <h3 class="contact__title reveal" data-words>Parlons de votre <em>prochain projet.</em></h3>
       <button class="contact__email reveal" data-email="hamza.denis.pro@gmail.com" data-magnetic>
         <span>hamza.denis.pro@gmail.com</span>
         <small>Cliquer pour copier</small>
@@ -482,6 +494,8 @@
       </ul>
     </section>
   </main>
+
+  <div class="bigname" aria-hidden="true"><span data-fill>Hamza Denis</span></div>
 
   <footer class="footer">
     <span>© <span data-year>2026</span> Hamza Denis</span>
@@ -499,6 +513,7 @@
 
   <div class="toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js"></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

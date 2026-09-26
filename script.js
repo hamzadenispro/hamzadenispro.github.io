@@ -14,6 +14,37 @@
       .join("");
   });
 
+  /* ───────────── Split words (headings + manifesto) ───────────── */
+  const splitWords = (root, wrapInner) => {
+    const words = [];
+    const walk = (node) => {
+      [...node.childNodes].forEach((n) => {
+        if (n.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach((part) => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) return frag.appendChild(document.createTextNode(part));
+            const w = document.createElement("span");
+            w.className = "w";
+            if (wrapInner) {
+              const inner = document.createElement("span");
+              inner.textContent = part;
+              w.appendChild(inner);
+            } else w.textContent = part;
+            words.push(w);
+            frag.appendChild(w);
+          });
+          n.replaceWith(frag);
+        } else if (n.nodeType === 1) walk(n);
+      });
+    };
+    walk(root);
+    return words;
+  };
+  $$("[data-words]").forEach((el) => splitWords(el, true).forEach((w, i) => w.style.setProperty("--i", i)));
+  const scrubEl = $("[data-scrub]");
+  const scrubWords = scrubEl ? splitWords(scrubEl, false) : [];
+
   /* ───────────── BUT progress ───────────── */
   $$(".edu__progress").forEach((el) => {
     const start = new Date(el.dataset.start).getTime();
@@ -111,6 +142,11 @@
   const timeline = $(".timeline");
   const sections = $$("main section[id]");
   const navLinks = $$(".nav__links a");
+  const heroLines = $$(".hero__title .line");
+  const heroContent = $(".hero__content");
+  const passions = $$(".passion");
+  const bigname = $("[data-fill]");
+  const footer = $(".footer");
   let lastY = window.scrollY;
   const onScroll = () => {
     const y = window.scrollY;
@@ -122,6 +158,38 @@
     const r = timeline.getBoundingClientRect();
     const p = Math.min(1, Math.max(0, (innerHeight * 0.6 - r.top) / r.height));
     tlLine.style.height = p * 100 + "%";
+
+    // Hero: name lines drift apart, content fades as you leave
+    if (y < innerHeight * 1.2) {
+      const k = Math.min(1, y / innerHeight);
+      heroLines[0].style.transform = `translateX(${-k * 14}vw)`;
+      heroLines[1].style.transform = `translateX(${k * 10}vw)`;
+      heroContent.style.opacity = 1 - k * 1.1;
+      heroContent.style.transform = `translateY(${k * 90}px)`;
+      heroContent.style.filter = k > 0.02 ? `blur(${k * 6}px)` : "";
+    }
+
+    // Manifesto: words light up progressively
+    if (scrubEl) {
+      const mr = scrubEl.getBoundingClientRect();
+      const mp = (innerHeight * 0.85 - mr.top) / (mr.height + innerHeight * 0.35);
+      const lit = Math.floor(mp * scrubWords.length * 1.05);
+      scrubWords.forEach((w, i) => w.classList.toggle("on", i < lit));
+    }
+
+    // Passions: images drift inside their frames
+    passions.forEach((el) => {
+      const pr = el.getBoundingClientRect();
+      if (pr.bottom < 0 || pr.top > innerHeight) return;
+      const c = (pr.top + pr.height / 2 - innerHeight / 2) / innerHeight;
+      el.style.setProperty("--py", `${c * -40}px`);
+    });
+
+    // Giant name fills with colour as the page ends
+    const br = bigname.getBoundingClientRect();
+    const bp = Math.min(1, Math.max(0, (innerHeight - br.top) / (br.height + footer.offsetHeight)));
+    bigname.style.setProperty("--fill", `${bp * 100}%`);
+    bigname.style.setProperty("--rise", `${(1 - bp) * 30}%`);
 
     let current = "";
     sections.forEach((s) => {
@@ -144,13 +212,60 @@
   );
   onScroll();
 
+  /* ───────────── Smooth scroll (Lenis, optional) ───────────── */
+  let lenis = null;
+  if (window.Lenis && !reduceMotion) {
+    lenis = new window.Lenis({ lerp: 0.09, wheelMultiplier: 1 });
+    const raf = (t) => {
+      lenis.raf(t);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+    $$('a[href^="#"]').forEach((a) =>
+      a.addEventListener("click", (e) => {
+        const id = a.getAttribute("href");
+        const target = id === "#top" ? 0 : $(id);
+        if (target === null) return;
+        e.preventDefault();
+        lenis.scrollTo(target, { duration: 1.6 });
+      })
+    );
+  }
+  const lockScroll = (on) => {
+    document.body.style.overflow = on ? "hidden" : "";
+    if (lenis) on ? lenis.stop() : lenis.start();
+  };
+
+  /* ───────────── Marquee reacts to scroll speed ───────────── */
+  const track = $(".marquee__track");
+  if (track && !reduceMotion) {
+    track.classList.add("is-js");
+    let x = 0, dir = 1, lastSY = scrollY, boost = 0;
+    const items = $$(".marquee__item", track);
+    const loop = () => {
+      const sy = scrollY, dv = sy - lastSY;
+      lastSY = sy;
+      if (dv !== 0) dir = dv > 0 ? 1 : -1;
+      boost += (Math.min(40, Math.abs(dv)) - boost) * 0.1;
+      x -= (0.6 + boost * 0.35) * dir;
+      const half = track.scrollWidth / 2;
+      if (x <= -half) x += half;
+      if (x > 0) x -= half;
+      track.style.transform = `translate3d(${x}px,0,0)`;
+      const skew = Math.max(-8, Math.min(8, boost * 0.35 * dir));
+      items.forEach((it) => (it.style.transform = `skewX(${-skew}deg)`));
+      requestAnimationFrame(loop);
+    };
+    requestAnimationFrame(loop);
+  }
+
   /* ───────────── Mobile menu ───────────── */
   const burger = $(".nav__burger");
   const toggleMenu = (open) => {
     menu.classList.toggle("is-open", open);
     burger.setAttribute("aria-expanded", open);
     menu.setAttribute("aria-hidden", !open);
-    document.body.style.overflow = open ? "hidden" : "";
+    lockScroll(open);
   };
   burger.addEventListener("click", () => toggleMenu(!menu.classList.contains("is-open")));
   $$("a", menu).forEach((a) => a.addEventListener("click", () => toggleMenu(false)));
@@ -201,14 +316,14 @@
     lbContent.innerHTML = "";
     lbContent.appendChild(tpl.content.cloneNode(true));
     lb.hidden = false;
-    document.body.style.overflow = "hidden";
+    lockScroll(true);
     requestAnimationFrame(() => lb.classList.add("is-open"));
     $(".lb__close", lb).focus();
     $(".lb__panel", lb).scrollTop = 0;
   };
   const closeLb = () => {
     lb.classList.remove("is-open");
-    document.body.style.overflow = "";
+    lockScroll(false);
     setTimeout(() => (lb.hidden = true), reduceMotion ? 0 : 450);
     lastFocus?.focus();
   };
@@ -257,8 +372,12 @@
       ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
       requestAnimationFrame(loop);
     })();
+    const label = $(".cursor__label");
     document.addEventListener("pointerover", (e) => {
-      cursor.classList.toggle("is-hover", !!e.target.closest("a, button, [data-tilt], .passion"));
+      const labelled = e.target.closest("[data-cursor]");
+      cursor.classList.toggle("has-label", !!labelled && lb.hidden);
+      if (labelled) label.textContent = labelled.dataset.cursor;
+      cursor.classList.toggle("is-hover", !labelled && !!e.target.closest("a, button, [data-tilt], .passion"));
     });
 
     $$("[data-magnetic]").forEach((el) => {

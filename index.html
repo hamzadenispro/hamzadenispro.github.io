@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hamza Denis — Portfolio</title>
+  <meta name="description" content="Hamza Denis, étudiant en BUT Techniques de Commercialisation à Colmar. Vente, marketing digital, communication." />
+  <meta name="theme-color" content="#050b1a" />
+  <meta property="og:title" content="Hamza Denis — Portfolio" />
+  <meta property="og:description" content="Étudiant en BUT Techniques de Commercialisation à Colmar. Vente, marketing digital, communication." />
+  <meta property="og:image" content="assets/img/hamza.webp" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1630'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='30' fill='%239cc3ff'%3EHD%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="is-loading">
+  <div class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <span class="loader__mono">HD</span>
+      <span class="loader__bar"><i></i></span>
+      <span class="loader__count">0</span>
+    </div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"></div></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#top" class="nav__logo" data-magnetic aria-label="Accueil"><span>H</span><em>D</em></a>
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a href="#profil">Profil</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#experience">Expériences</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#passions">Passions</a>
+    </nav>
+    <a href="#contact" class="btn btn--small" data-magnetic>Contact</a>
+    <button class="nav__burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+  <div class="menu" aria-hidden="true">
+    <a href="#profil">Profil</a>
+    <a href="#parcours">Parcours</a>
+    <a href="#experience">Expériences</a>
+    <a href="#realisations">Réalisations</a>
+    <a href="#passions">Passions</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main id="top">
+    <!-- ═════════════ HERO ═════════════ -->
+    <section class="hero">
+      <canvas class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal-up">
+          <span class="status">Étudiant en BUT TC · 2024 — 2027</span>
+          <span>Colmar, France</span>
+        </p>
+        <h1 class="hero__title" aria-label="Hamza Denis">
+          <span class="line"><span class="split">Hamza</span></span>
+          <span class="line"><em class="hero__last">Denis</em></span>
+        </h1>
+        <p class="hero__role reveal-up">
+          <span class="hero__role-static">—</span>
+          <span class="rotator" data-roles="Vente & négociation|Marketing digital|Communication|Relation client"></span>
+        </p>
+        <p class="hero__tagline reveal-up">
+          Étudiant en Techniques de Commercialisation, je transforme chaque échange client en résultat concret&nbsp;: de la vente en magasin aux campagnes Meta&nbsp;Ads.
+        </p>
+        <div class="hero__cta reveal-up">
+          <a href="#realisations" class="btn" data-magnetic>Voir mes réalisations <span class="arrow">→</span></a>
+          <a href="#contact" class="btn btn--ghost" data-magnetic>Me contacter</a>
+        </div>
+      </div>
+      <a href="#profil" class="hero__scroll" aria-label="Défiler vers le profil">
+        <span>Scroll</span><i></i>
+      </a>
+    </section>
+
+    <!-- ═════════════ PROFIL ═════════════ -->
+    <section class="section about" id="profil">
+      <div class="section__head">
+        <span class="section__index">01</span>
+        <h2 class="section__label">Profil</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__visual reveal">
+          <div class="portrait" data-tilt>
+            <div class="portrait__inner">
+              <img src="assets/img/hamza.webp" alt="Portrait de Hamza Denis" width="907" height="948" />
+            </div>
+            <div class="portrait__ring"></div>
+            <span class="chip chip--1">20 ans</span>
+            <span class="chip chip--2">Colmar</span>
+            <span class="chip chip--3">BUT TC</span>
+            <span class="chip chip--4">FR · EN · BS</span>
+          </div>
+        </div>
+        <div class="about__text">
+          <h3 class="display reveal">Le goût du terrain, <em>l'esprit du résultat.</em></h3>
+          <div class="about__paras">
+            <p class="reveal">J'ai 20 ans, je vis à Colmar et je suis étudiant en BUT Techniques de Commercialisation. J'y développe des compétences en marketing, négociation et communication, à travers des projets concrets, des études de marché et des mises en situation professionnelles.</p>
+            <p class="reveal">En parallèle, je me confronte au terrain&nbsp;: vente en magasin, accueil client, prospection immobilière et pilotage de campagnes publicitaires. Je parle <strong>français</strong>, <strong>anglais</strong> et <strong>bosniaque</strong>.</p>
+          </div>
+          <div class="stats">
+            <div class="stat reveal">
+              <div class="stat__value"><b data-count="10000">0</b><span> €+</span></div>
+              <span class="stat__label">de chiffre d'affaires en une semaine chez Conforama</span>
+            </div>
+            <div class="stat reveal">
+              <div class="stat__value"><b data-count="7204">0</b></div>
+              <span class="stat__label">impressions pour ma campagne Meta Ads en 5 jours</span>
+            </div>
+            <div class="stat reveal">
+              <div class="stat__value"><b data-count="6">0</b></div>
+              <span class="stat__label">leads qualifiés générés pour Groupimmo</span>
+            </div>
+            <div class="stat reveal">
+              <div class="stat__value"><span class="stat__pre">N°</span><b data-count="1">0</b></div>
+              <span class="stat__label">sur 2 des 3 indicateurs de vente au CGR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">Vente</span><span class="marquee__item">Négociation</span><span class="marquee__item">Marketing digital</span><span class="marquee__item">Meta Ads</span><span class="marquee__item">Communication</span><span class="marquee__item">Étude de marché</span><span class="marquee__item">Relation client</span><span class="marquee__item">Prospection</span>
+        <span class="marquee__item">Vente</span><span class="marquee__item">Négociation</span><span class="marquee__item">Marketing digital</span><span class="marquee__item">Meta Ads</span><span class="marquee__item">Communication</span><span class="marquee__item">Étude de marché</span><span class="marquee__item">Relation client</span><span class="marquee__item">Prospection</span>
+      </div>
+    </div>
+
+    <!-- ═════════════ PARCOURS ═════════════ -->
+    <section class="section" id="parcours">
+      <div class="section__head">
+        <span class="section__index">02</span>
+        <h2 class="section__label">Parcours scolaire</h2>
+      </div>
+      <h3 class="display reveal">Des bases solides, <em>un cap clair.</em></h3>
+      <div class="edu">
+        <article class="card edu__card reveal">
+          <div class="edu__top">
+            <span class="edu__years">2024 — 2027</span>
+            <span class="pill pill--live">En cours</span>
+          </div>
+          <h4 class="edu__title">BUT <em>Techniques de Commercialisation</em></h4>
+          <p class="edu__text">Je développe des compétences en marketing, négociation et communication, à travers des projets concrets, des études de marché et des mises en situation professionnelles.</p>
+          <div class="edu__progress" data-start="2024-09-01" data-end="2027-06-30">
+            <div class="edu__bar"><i></i></div>
+            <span class="edu__pct"></span>
+          </div>
+        </article>
+        <article class="card edu__card reveal">
+          <div class="edu__top">
+            <span class="edu__years">2021 — 2024</span>
+            <span class="pill">Obtenu</span>
+          </div>
+          <h4 class="edu__title">Baccalauréat <em>STMG</em></h4>
+          <p class="edu__sub">Sciences et Technologies du Management et de la Gestion</p>
+          <p class="edu__text">Une première compréhension du fonctionnement des organisations, du management et des bases de la gestion, tout en découvrant le travail en équipe et l'analyse de situations concrètes.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════════════ EXPÉRIENCES ═════════════ -->
+    <section class="section experience" id="experience">
+      <div class="section__head">
+        <span class="section__index">03</span>
+        <h2 class="section__label">Expériences</h2>
+      </div>
+      <h3 class="display reveal">Sur le terrain, <em>des résultats mesurables.</em></h3>
+      <div class="timeline">
+        <div class="timeline__line"><i></i></div>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__side">
+            <span class="tl-item__period">Nov. 2025 — Aujourd'hui</span>
+            <div class="logo-tile"><img src="assets/img/logo-cgr.webp" alt="CGR Cinémas" loading="lazy" /></div>
+          </div>
+          <div class="tl-item__body">
+            <h4 class="tl-item__role">Agent d'accueil</h4>
+            <div class="tl-item__place">CGR Cinémas · Colmar</div>
+            <p class="tl-item__text">Poste décroché à l'issue d'une compétition entre tous les candidats, en me classant sur le podium de deux des trois indicateurs de performance, avec deux premières places. J'y développe chaque jour mes compétences commerciales&nbsp;: vente de menus, adaptation du discours selon la clientèle et optimisation du panier moyen.</p>
+            <ul class="tl-item__kpis">
+              <li><b>41,98 %</b> taux de menu · 1<sup>er</sup></li>
+              <li><b>10,82 €</b> panier moyen · 1<sup>er</sup></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__side">
+            <span class="tl-item__period">Avril — Mai 2026</span>
+            <div class="logo-tile"><img src="assets/img/logo-groupimmo.webp" alt="Groupimmo Colmar" loading="lazy" /></div>
+          </div>
+          <div class="tl-item__body">
+            <h4 class="tl-item__role">Stage assistant commercial en immobilier</h4>
+            <div class="tl-item__place">Groupimmo Colmar · 8 semaines</div>
+            <p class="tl-item__text">Aux côtés d'une conseillère immobilière, dans l'agence classée n°1 à Colmar sur MeilleursAgents et Opinion System. Prospection terrain, négociation commerciale, visites de biens, rédaction de mandats exclusifs et création de supports de communication. J'ai conçu et lancé la toute première campagne Meta Ads de l'agence.</p>
+            <ul class="tl-item__kpis">
+              <li><b>7 200</b> impressions</li>
+              <li><b>6</b> leads qualifiés en 4 jours</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__side">
+            <span class="tl-item__period">Août 2025</span>
+            <div class="logo-tile logo-tile--wide"><img src="assets/img/logo-mdm.webp" alt="Maisons du Monde" loading="lazy" /></div>
+          </div>
+          <div class="tl-item__body">
+            <h4 class="tl-item__role">Vendeur</h4>
+            <div class="tl-item__place">Maisons du Monde · Été 2025</div>
+            <p class="tl-item__text">Conseil client, techniques de vente et mise en valeur des produits. Je me suis adapté à différents profils de clientèle en proposant des solutions personnalisées, pour contribuer à l'augmentation du panier moyen tout en garantissant une expérience client de qualité.</p>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__side">
+            <span class="tl-item__period">Février 2025</span>
+            <div class="logo-tile logo-tile--wide"><img src="assets/img/logo-conforama.webp" alt="Conforama" loading="lazy" /></div>
+          </div>
+          <div class="tl-item__body">
+            <h4 class="tl-item__role">Vendeur en électroménager · Stage</h4>
+            <div class="tl-item__place">Conforama</div>
+            <p class="tl-item__text">Lors de ma meilleure semaine, j'ai réalisé un chiffre d'affaires supérieur à 10 000 €, une performance équivalente, voire supérieure, à celle d'un vendeur confirmé. Conseil, conclusion de ventes et optimisation du panier moyen, en m'adaptant aux attentes de chaque client.</p>
+            <ul class="tl-item__kpis">
+              <li><b>10 000 €+</b> de CA en une semaine</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════════════ RÉALISATIONS ═════════════ -->
+    <section class="section projects" id="realisations">
+      <div class="section__head">
+        <span class="section__index">04</span>
+        <h2 class="section__label">Réalisations</h2>
+      </div>
+      <div class="projects__head">
+        <h3 class="display reveal">Une sélection <em>de mes projets.</em></h3>
+        <div class="filters reveal" role="tablist" aria-label="Filtrer les réalisations">
+          <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Tout</button>
+          <button class="filter" data-filter="com" role="tab" aria-selected="false">Communication</button>
+          <button class="filter" data-filter="mkt" role="tab" aria-selected="false">Marketing</button>
+          <button class="filter" data-filter="digital" role="tab" aria-selected="false">Digital</button>
+          <button class="filter" data-filter="vente" role="tab" aria-selected="false">Vente</button>
+        </div>
+      </div>
+
+      <div class="projects__grid">
+        <!-- Meta Ads -->
+        <article class="card project project--wide reveal" data-cat="digital" tabindex="0" data-tilt>
+          <div class="project__media project__media--screen">
+            <img src="assets/img/mkt-meta-ads.webp" alt="Tableau de bord Meta Ads de la campagne Groupimmo" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Marketing digital</span><span>2026</span></div>
+            <h4 class="project__title">Campagne Meta Ads · Groupimmo<span class="project__arrow">→</span></h4>
+            <p class="project__text">La toute première campagne publicitaire de l'agence, pilotée de A à Z&nbsp;: stratégie, ciblage, création et optimisation.</p>
+            <ul class="tags"><li>7 204 impressions</li><li>4 563 personnes touchées</li><li>6 leads</li></ul>
+          </div>
+          <template class="project__detail">
+            <p class="lb__kicker">Marketing digital · Groupimmo Colmar</p>
+            <h3 class="lb__title">Création et gestion complète d'une campagne <em>Meta Ads</em></h3>
+            <div class="lb__stats">
+              <div><b>7 204</b><span>impressions</span></div>
+              <div><b>4 563</b><span>personnes touchées</span></div>
+              <div><b>6</b><span>leads qualifiés</span></div>
+              <div><b>5 j</b><span>de diffusion</span></div>
+            </div>
+            <p>Lors de mon stage chez Groupimmo, j'ai eu l'opportunité de créer et piloter entièrement la première campagne publicitaire Meta Ads de l'entreprise.</p>
+            <p>De la stratégie publicitaire jusqu'à la mise en ligne, j'ai réalisé l'intégralité du projet&nbsp;: conception de la campagne, ciblage de l'audience, création du contenu publicitaire et optimisation des performances.</p>
+            <p>Grâce à cette stratégie, nous avons obtenu 6 leads qualifiés en quelques jours, un excellent résultat dans le secteur de l'immobilier. Ce projet démontre ma capacité à gérer une campagne de A à Z, à analyser ses performances et à obtenir des résultats concrets rapidement.</p>
+            <div class="lb__gallery"><img src="assets/img/mkt-meta-ads.webp" alt="Tableau de bord Meta Ads" loading="lazy" /></div>
+          </template>
+        </article>
+
+        <!-- Lanméa -->
+        <article class="card project reveal" data-cat="mkt" tabindex="0" data-tilt>
+          <div class="project__media project__media--soft">
+            <img src="assets/img/mkt-lanmea.webp" alt="Savons Lanméa à base d'algues de sargasse" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Marketing · Étude de marché</span><span>Challenge 24 h</span></div>
+            <h4 class="project__title">Lanméa, savons aux algues<span class="project__arrow">→</span></h4>
+            <p class="project__text">Créer une entreprise en moins de 24 heures autour d'un produit écologique&nbsp;: des savons à base d'algues de sargasse.</p>
+            <ul class="tags"><li>115 répondants</li><li>Questionnaire</li><li>Lancement</li></ul>
+          </div>
+          <template class="project__detail">
+            <p class="lb__kicker">Marketing · Analyse de marché</p>
+            <h3 class="lb__title">Lanméa, <em>des savons à base d'algues de sargasse</em></h3>
+            <p>Ce projet s'inscrivait dans un challenge de groupe consistant à créer une entreprise en moins de 24 heures, en respectant certains critères, notamment le développement d'un produit écologique et utile pour l'environnement.</p>
+            <p>Mon groupe et moi avons choisi de concevoir des savons à base d'algues de sargasse, connues pour être nocives pour les écosystèmes marins lorsqu'elles prolifèrent.</p>
+            <p>J'ai élaboré et diffusé un questionnaire, puis réalisé les tableaux statistiques pour évaluer l'intérêt des consommateurs. Les résultats nous ont permis de valider l'intérêt potentiel du produit auprès du public.</p>
+            <p>Le projet avait un fort potentiel de concrétisation&nbsp;: points de vente identifiés, laboratoires de fabrication trouvés et étapes de commercialisation structurées. Tout était prêt pour un lancement.</p>
+            <div class="lb__gallery lb__gallery--3">
+              <img src="assets/img/mkt-lanmea.webp" alt="Visuel des savons Lanméa" loading="lazy" class="on-light" />
+              <img src="assets/img/mkt-etude-1.webp" alt="Résultats de l'étude de marché (1)" loading="lazy" />
+              <img src="assets/img/mkt-etude-2.webp" alt="Résultats de l'étude de marché (2)" loading="lazy" />
+            </div>
+          </template>
+        </article>
+
+        <!-- Concours d'éloquence -->
+        <article class="card project reveal" data-cat="com" tabindex="0" data-tilt>
+          <div class="project__media project__media--duo">
+            <img src="assets/img/com-eloquence.webp" alt="Affiche du Concours d'éloquence" loading="lazy" />
+            <img src="assets/img/com-eloquence-j1.webp" alt="Affiche J-1 du Concours d'éloquence" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Communication · Événementiel</span><span>BUT TC</span></div>
+            <h4 class="project__title">Concours d'éloquence<span class="project__arrow">→</span></h4>
+            <p class="project__text">Deux affiches pour un événement que j'ai co-organisé, diffusées sur les réseaux sociaux et dans l'université.</p>
+            <ul class="tags"><li>Affiches</li><li>QR code</li><li>Réseaux sociaux</li></ul>
+          </div>
+          <template class="project__detail">
+            <p class="lb__kicker">Communication · Événementiel</p>
+            <h3 class="lb__title">Affiches du <em>Concours d'éloquence</em></h3>
+            <p>J'ai créé deux affiches pour promouvoir un événement dont j'étais l'un des organisateurs, avec des supports visuels clairs, attractifs et informatifs pour communiquer efficacement auprès du public.</p>
+            <p>Ces affiches ont été diffusées sur les réseaux sociaux pour toucher une audience large et ciblée, et affichées au sein de l'université pour augmenter leur visibilité auprès des étudiants.</p>
+            <p>J'y ai intégré un QR code pour faciliter l'accès aux informations et aux inscriptions&nbsp;: une démarche d'optimisation de l'expérience utilisateur et de conversion des prospects en participants.</p>
+            <div class="lb__gallery lb__gallery--2">
+              <img src="assets/img/com-eloquence.webp" alt="Affiche du Concours d'éloquence" loading="lazy" />
+              <img src="assets/img/com-eloquence-j1.webp" alt="Affiche J-1" loading="lazy" />
+            </div>
+          </template>
+        </article>
+
+        <!-- Instagram -->
+        <article class="card project reveal" data-cat="com" tabindex="0" data-tilt>
+          <div class="project__media project__media--duo">
+            <img src="assets/img/com-noel.webp" alt="Publication Instagram sur le marché de Noël de Colmar" loading="lazy" />
+            <img src="assets/img/com-concours.webp" alt="Publication Instagram du jeu concours" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Communication · Réseaux sociaux</span><span>Stage</span></div>
+            <h4 class="project__title">Publications Instagram<span class="project__arrow">→</span></h4>
+            <p class="project__text">Un post pour le marché de Noël de Colmar et un jeu concours en partenariat avec une pizzeria locale.</p>
+            <ul class="tags"><li>Instagram</li><li>Jeu concours</li><li>Partenariat local</li></ul>
+          </div>
+          <template class="project__detail">
+            <p class="lb__kicker">Communication · Réseaux sociaux</p>
+            <h3 class="lb__title">Deux publications <em>Instagram</em></h3>
+            <p><strong>Colmar, la magie de Noël.</strong> Une publication conçue pour mettre en avant le marché de Noël de Colmar. J'ai travaillé l'attractivité du contenu, le choix des images et la rédaction d'un message percutant pour capter l'attention du public cible.</p>
+            <p><strong>Jeu concours.</strong> Ma tutrice de stage, commerciale dans le secteur du Hohwald, a mis en place un partenariat avec une pizzeria locale. Le principe&nbsp;: faire gagner un bon cadeau et une bouteille de rosé. En échange, la pizzeria gagnait en visibilité et en clientèle, et promouvait l'activité de ma tutrice auprès de ses propres clients.</p>
+            <p>J'ai conçu ce jeu concours pour augmenter la visibilité du compte Instagram. Résultat&nbsp;: une vingtaine d'abonnés gagnés, un très bon résultat pour un compte récemment créé.</p>
+            <div class="lb__gallery lb__gallery--2">
+              <img src="assets/img/com-noel.webp" alt="Post marché de Noël de Colmar" loading="lazy" />
+              <img src="assets/img/com-concours.webp" alt="Post jeu concours" loading="lazy" />
+            </div>
+          </template>
+        </article>
+
+        <!-- Feyel -->
+        <article class="card project reveal" data-cat="vente" tabindex="0" data-tilt>
+          <div class="project__media project__media--soft">
+            <img src="assets/img/vente-feyel.webp" alt="Catalogue Frédéric Feyel" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Vente · Négociation</span><span>BUT TC</span></div>
+            <h4 class="project__title">Catalogue Frédéric Feyel<span class="project__arrow">→</span></h4>
+            <p class="project__text">Un catalogue produit conçu pour une négociation fictive, en tant que représentant de la marque.</p>
+            <ul class="tags"><li>Offre commerciale</li><li>Négociation</li></ul>
+          </div>
+          <template class="project__detail">
+            <p class="lb__kicker">Vente · Négociation</p>
+            <h3 class="lb__title">Catalogue <em>Frédéric Feyel</em></h3>
+            <p>J'ai conçu un catalogue Feyel dans le cadre d'une négociation fictive, en tant que représentant de la marque (maison alsacienne fondée en 1811).</p>
+            <p>Ce projet met en avant ma capacité à construire une offre commerciale cohérente et à valoriser des produits dans un contexte de vente.</p>
+            <div class="lb__gallery"><img src="assets/img/vente-feyel.webp" alt="Catalogue Frédéric Feyel" loading="lazy" /></div>
+          </template>
+        </article>
+
+        <!-- Performances vente -->
+        <article class="card project project--wide reveal" data-cat="vente" tabindex="0" data-tilt>
+          <div class="project__media project__media--soft">
+            <img src="assets/img/vente-cgr-kpi.webp" alt="Tableau des performances de vente au CGR" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Vente · Performances</span><span>2025 — 2026</span></div>
+            <h4 class="project__title">Mes chiffres de vente<span class="project__arrow">→</span></h4>
+            <p class="project__text">N°1 sur le taux de menu et le panier moyen au CGR, 10 000 €+ de CA en une semaine chez Conforama.</p>
+            <ul class="tags"><li>CGR</li><li>Conforama</li><li>Maisons du Monde</li></ul>
+          </div>
+          <template class="project__detail">
+            <p class="lb__kicker">Vente · Performances</p>
+            <h3 class="lb__title">Des résultats <em>qui parlent d'eux-mêmes</em></h3>
+            <div class="lb__stats">
+              <div><b>41,98 %</b><span>taux de menu · 1<sup>er</sup></span></div>
+              <div><b>10,82 €</b><span>panier moyen · 1<sup>er</sup></span></div>
+              <div><b>38,1 %</b><span>ventes menus · 1<sup>er</sup></span></div>
+              <div><b>10 000 €+</b><span>CA en une semaine</span></div>
+            </div>
+            <p><strong>CGR Colmar.</strong> Je me classe numéro 1 dans deux des trois catégories&nbsp;: le taux de vente de menus et le panier moyen. Ce job étudiant me permet de développer mes compétences en relation client, en conseil, en vente additionnelle et en satisfaction client.</p>
+            <p><strong>Maisons du Monde.</strong> Vendeur durant la période estivale, j'ai renforcé mes compétences en conseil client, en mise en valeur des produits et en techniques de vente dans un environnement exigeant.</p>
+            <p><strong>Conforama.</strong> Lors de ma meilleure semaine de stage, j'ai réalisé plus de 10 000 € de chiffre d'affaires, en atteignant, voire dépassant, les objectifs fixés.</p>
+            <div class="lb__gallery lb__gallery--3">
+              <img src="assets/img/vente-cgr-kpi.webp" alt="Classement des indicateurs de vente au CGR" loading="lazy" />
+              <img src="assets/img/vente-cgr-menus.webp" alt="Résultats des ventes de menus au CGR" loading="lazy" />
+              <img src="assets/img/vente-badge-mdm.webp" alt="Badge vendeur Maisons du Monde" loading="lazy" class="on-light" />
+            </div>
+          </template>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════════════ PASSIONS ═════════════ -->
+    <section class="section" id="passions">
+      <div class="section__head">
+        <span class="section__index">05</span>
+        <h2 class="section__label">À propos de moi</h2>
+      </div>
+      <h3 class="display reveal">Ce qui me fait <em>avancer.</em></h3>
+      <div class="bento">
+        <article class="passion passion--kosovo reveal">
+          <img src="assets/img/passion-kosovo.webp" alt="Prizren, Kosovo" loading="lazy" />
+          <div class="passion__body">
+            <span class="passion__tag">Origines</span>
+            <h4>Le Kosovo</h4>
+            <p>Je suis né au Kosovo et j'y ai grandi jusqu'à l'âge de 6 ans. En 2012, je suis arrivé en France.</p>
+          </div>
+        </article>
+        <article class="passion passion--auto reveal">
+          <img src="assets/img/passion-auto.webp" alt="Voitures de course de nuit" loading="lazy" />
+          <div class="passion__body">
+            <span class="passion__tag">Passion</span>
+            <h4>L'automobile</h4>
+            <p>Elle me passionne depuis mon plus jeune âge, un intérêt qui guide aujourd'hui mon parcours.</p>
+          </div>
+        </article>
+        <article class="passion passion--nature reveal">
+          <img src="assets/img/passion-nature.webp" alt="Paysage de montagne" loading="lazy" />
+          <div class="passion__body">
+            <span class="passion__tag">Ressource</span>
+            <h4>La nature</h4>
+            <p>Un véritable refuge. Observer les paysages ou écouter les sons de l'environnement me permet de me recentrer, de prendre du recul et de retrouver de l'énergie.</p>
+          </div>
+        </article>
+        <article class="passion passion--sport reveal">
+          <img src="assets/img/passion-sport.webp" alt="Course à pied au bord d'un lac" loading="lazy" />
+          <div class="passion__body">
+            <span class="passion__tag">Discipline</span>
+            <h4>Le sport</h4>
+            <p>J'ai perdu beaucoup de poids et parcouru beaucoup de chemin. Aujourd'hui&nbsp;: musculation, course à pied et football.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════════════ CONTACT ═════════════ -->
+    <section class="section contact" id="contact">
+      <div class="contact__glow" aria-hidden="true"></div>
+      <div class="section__head">
+        <span class="section__index">06</span>
+        <h2 class="section__label">Contact</h2>
+      </div>
+      <h3 class="contact__title reveal">Parlons de votre <em>prochain projet.</em></h3>
+      <button class="contact__email reveal" data-email="hamza.denis.pro@gmail.com" data-magnetic>
+        <span>hamza.denis.pro@gmail.com</span>
+        <small>Cliquer pour copier</small>
+      </button>
+      <div class="contact__actions reveal">
+        <a class="btn" href="tel:+33650450264" data-magnetic>06 50 45 02 64</a>
+        <a class="btn btn--ghost" href="mailto:hamza.denis.pro@gmail.com" data-magnetic>Envoyer un e-mail <span class="arrow">→</span></a>
+      </div>
+      <ul class="contact__socials reveal">
+        <li><a href="https://www.linkedin.com/search/results/people/?keywords=Hamza%20Denis" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><span>Colmar, France</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span data-year>2026</span> Hamza Denis</span>
+    <a href="#top" class="footer__top" data-magnetic>Retour en haut ↑</a>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lb" role="dialog" aria-modal="true" aria-label="Détail de la réalisation" hidden>
+    <div class="lb__backdrop" data-close></div>
+    <div class="lb__panel">
+      <button class="lb__close" data-close aria-label="Fermer">✕</button>
+      <div class="lb__content"></div>
+    </div>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

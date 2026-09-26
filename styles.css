@@ -807,3 +807,13 @@ body.is-ready .badge { opacity: 1; transform: none; }
   .nav__right { margin-left: auto; }
   .nav__right .btn--small { display: none; }
 }
+
+/* Internship search callouts */
+.about__search {
+  padding: 16px 20px; border-radius: 16px;
+  border: 1px solid rgba(94, 230, 168, 0.3); background: rgba(94, 230, 168, 0.06);
+}
+.about__paras .about__search strong { color: var(--text); }
+.about__search a { color: #5ee6a8; font-weight: 600; white-space: nowrap; }
+.contact__lead { color: var(--muted); font-size: clamp(16px, 1.6vw, 20px); margin: -24px auto 40px; max-width: 46ch; }
+.contact__lead strong { color: var(--text); }

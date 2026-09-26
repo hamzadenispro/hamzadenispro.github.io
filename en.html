@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hamza Denis — Portfolio</title>
+  <meta name="description" content="Hamza Denis, Business &amp; Marketing student (BUT Techniques de Commercialisation) in Colmar, France. Sales, digital marketing, communication." />
+  <meta name="theme-color" content="#050b1a" />
+  <meta property="og:title" content="Hamza Denis — Portfolio" />
+  <meta property="og:description" content="Business &amp; Marketing student in Colmar, France. Sales, digital marketing, communication." />
+  <meta property="og:image" content="assets/img/hamza.webp" />
+  <link rel="alternate" hreflang="fr" href="index.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1630'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='30' fill='%239cc3ff'%3EHD%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="is-loading">
+  <div class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <span class="loader__mono">HD</span>
+      <span class="loader__bar"><i></i></span>
+      <span class="loader__count">0</span>
+    </div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span class="cursor__label"></span></div></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#top" class="nav__logo" data-magnetic aria-label="Home"><span>H</span><em>D</em></a>
+    <nav class="nav__links" aria-label="Main navigation">
+      <a href="#profile">Profile</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#passions">Passions</a>
+    </nav>
+    <div class="nav__right">
+      <a href="index.html" class="lang" hreflang="fr" lang="fr" aria-label="Version française">FR<span>/</span><b>EN</b></a>
+      <a href="#contact" class="btn btn--small" data-magnetic>Contact</a>
+    </div>
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+  <div class="menu" aria-hidden="true" data-lenis-prevent>
+    <a href="#profile">Profile</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#work">Work</a>
+    <a href="#passions">Passions</a>
+    <a href="#contact">Contact</a>
+    <a href="index.html" class="menu__lang" hreflang="fr" lang="fr">Version française →</a>
+  </div>
+
+  <main id="top">
+    <!-- ═════════════ HERO ═════════════ -->
+    <section class="hero">
+      <canvas class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal-up">
+          <span class="status">Business &amp; Marketing student · 2024 — 2027</span>
+          <span>Colmar, France</span>
+        </p>
+        <h1 class="hero__title" aria-label="Hamza Denis">
+          <span class="line"><span class="split">Hamza</span></span>
+          <span class="line"><em class="hero__last">Denis</em></span>
+        </h1>
+        <p class="hero__role reveal-up">
+          <span class="hero__role-static">—</span>
+          <span class="rotator" data-roles="Sales & negotiation|Digital marketing|Communication|Customer relations"></span>
+        </p>
+        <p class="hero__tagline reveal-up">
+          Business &amp; Marketing student turning every customer interaction into concrete results&nbsp;— from in-store sales to Meta&nbsp;Ads campaigns.
+        </p>
+        <div class="hero__cta reveal-up">
+          <a href="#work" class="btn" data-magnetic>See my work <span class="arrow">→</span></a>
+          <a href="#contact" class="btn btn--ghost" data-magnetic>Get in touch</a>
+        </div>
+      </div>
+      <a href="#work" class="badge" aria-label="See my work" data-magnetic>
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <defs><path id="badge-circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" /></defs>
+          <text><textPath href="#badge-circle">Portfolio · Hamza Denis · Business · Colmar ·</textPath></text>
+        </svg>
+        <span class="badge__core">↘</span>
+      </a>
+      <a href="#profile" class="hero__scroll" aria-label="Scroll to profile">
+        <span>Scroll</span><i></i>
+      </a>
+    </section>
+
+    <!-- ═════════════ MANIFESTO ═════════════ -->
+    <section class="manifesto" aria-label="In one sentence">
+      <p class="manifesto__text" data-scrub>Every customer is a meeting, every sale is proof. <em>I turn fieldwork into concrete results.</em></p>
+    </section>
+
+    <!-- ═════════════ PROFILE ═════════════ -->
+    <section class="section about" id="profile">
+      <div class="section__head">
+        <span class="section__index">01</span>
+        <h2 class="section__label">Profile</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__visual reveal">
+          <div class="portrait" data-tilt>
+            <div class="portrait__inner">
+              <img src="assets/img/hamza.webp" alt="Portrait of Hamza Denis" width="907" height="948" />
+            </div>
+            <div class="portrait__ring"></div>
+            <span class="chip chip--1">20 years old</span>
+            <span class="chip chip--2">Colmar</span>
+            <span class="chip chip--3">Business student</span>
+            <span class="chip chip--4">FR · EN · BS</span>
+          </div>
+        </div>
+        <div class="about__text">
+          <h3 class="display reveal" data-words>A taste for the field, <em>a drive for results.</em></h3>
+          <div class="about__paras">
+            <p class="reveal">I'm 20, I live in Colmar, France, and I'm studying for a BUT Techniques de Commercialisation, a three-year Business &amp; Marketing degree. I'm building skills in marketing, negotiation and communication through real projects, market research and professional role-plays.</p>
+            <p class="reveal">Alongside my studies, I work in the field: in-store sales, customer service, real-estate prospecting and running advertising campaigns. I speak <strong>French</strong>, <strong>English</strong> and <strong>Bosnian</strong>.</p>
+          </div>
+          <div class="stats">
+            <div class="stat reveal">
+              <div class="stat__value"><span>€</span><b data-count="10000">0</b><span>+</span></div>
+              <span class="stat__label">in revenue in a single week at Conforama</span>
+            </div>
+            <div class="stat reveal">
+              <div class="stat__value"><b data-count="7204">0</b></div>
+              <span class="stat__label">impressions for my Meta Ads campaign in 5 days</span>
+            </div>
+            <div class="stat reveal">
+              <div class="stat__value"><b data-count="6">0</b></div>
+              <span class="stat__label">qualified leads generated for Groupimmo</span>
+            </div>
+            <div class="stat reveal">
+              <div class="stat__value"><b data-count="1">0</b><span class="stat__pre">st</span></div>
+              <span class="stat__label">place in the CGR cinema menu sales challenge</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">Sales</span><span class="marquee__item">Negotiation</span><span class="marquee__item">Digital marketing</span><span class="marquee__item">Meta Ads</span><span class="marquee__item">Communication</span><span class="marquee__item">Market research</span><span class="marquee__item">Customer relations</span><span class="marquee__item">Prospecting</span>
+        <span class="marquee__item">Sales</span><span class="marquee__item">Negotiation</span><span class="marquee__item">Digital marketing</span><span class="marquee__item">Meta Ads</span><span class="marquee__item">Communication</span><span class="marquee__item">Market research</span><span class="marquee__item">Customer relations</span><span class="marquee__item">Prospecting</span>
+      </div>
+    </div>
+
+    <!-- ═════════════ EDUCATION ═════════════ -->
+    <section class="section" id="education">
+      <div class="section__head">
+        <span class="section__index">02</span>
+        <h2 class="section__label">Education</h2>
+      </div>
+      <h3 class="display reveal" data-words>Solid foundations, <em>a clear direction.</em></h3>
+      <div class="edu">
+        <article class="card edu__card reveal">
+          <div class="edu__top">
+            <span class="edu__years">2024 — 2027</span>
+            <span class="pill pill--live">In progress</span>
+          </div>
+          <h4 class="edu__title">BUT <em>Techniques de Commercialisation</em></h4>
+          <p class="edu__sub">Three-year Bachelor's in Business &amp; Marketing</p>
+          <p class="edu__text">Building skills in marketing, negotiation and communication through real projects, market research and professional role-plays.</p>
+          <div class="edu__progress" data-start="2024-09-01" data-end="2027-06-30">
+            <div class="edu__bar"><i></i></div>
+            <span class="edu__pct"></span>
+          </div>
+        </article>
+        <article class="card edu__card reveal">
+          <div class="edu__top">
+            <span class="edu__years">2021 — 2024</span>
+            <span class="pill">Completed</span>
+          </div>
+          <h4 class="edu__title">Baccalauréat <em>STMG</em></h4>
+          <p class="edu__sub">French high-school diploma in Management &amp; Business</p>
+          <p class="edu__text">A first understanding of how organisations work, of management and business fundamentals, while learning teamwork and how to analyse real-world situations.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════════════ EXPERIENCE ═════════════ -->
+    <section class="section experience" id="experience">
+      <div class="section__head">
+        <span class="section__index">03</span>
+        <h2 class="section__label">Experience</h2>
+      </div>
+      <h3 class="display reveal" data-words>In the field, <em>measurable results.</em></h3>
+      <div class="timeline">
+        <div class="timeline__line"><i></i></div>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__side">
+            <span class="tl-item__period">Nov 2025 — Present</span>
+            <div class="logo-tile"><img src="assets/img/logo-cgr.webp" alt="CGR Cinémas" loading="lazy" /></div>
+          </div>
+          <div class="tl-item__body">
+            <h4 class="tl-item__role">Front-of-house &amp; sales associate</h4>
+            <div class="tl-item__place">CGR Cinémas · Colmar</div>
+            <p class="tl-item__text">I won this position in a competition between all applicants, ranking on the podium for two of the three performance indicators, with two first places. Every day I sharpen my sales skills: selling menu deals, adapting my pitch to each type of customer and increasing the average basket.</p>
+            <ul class="tl-item__kpis">
+              <li><b>1<sup>st</sup></b> menu sales challenge</li>
+              <li><b>41.98%</b> menu rate · 1<sup>st</sup></li>
+              <li><b>€10.82</b> average basket · 1<sup>st</sup></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__side">
+            <span class="tl-item__period">April — May 2026</span>
+            <div class="logo-tile"><img src="assets/img/logo-groupimmo.webp" alt="Groupimmo Colmar" loading="lazy" /></div>
+          </div>
+          <div class="tl-item__body">
+            <h4 class="tl-item__role">Real-estate sales assistant intern</h4>
+            <div class="tl-item__place">Groupimmo Colmar · 8 weeks</div>
+            <p class="tl-item__text">Working alongside a real-estate advisor at the agency ranked no. 1 in Colmar on MeilleursAgents and Opinion System. Field prospecting, sales negotiation, property viewings, drafting exclusive mandates and creating marketing materials. I designed and launched the agency's very first Meta Ads campaign.</p>
+            <ul class="tl-item__kpis">
+              <li><b>7,200</b> impressions</li>
+              <li><b>6</b> qualified leads in 4 days</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__side">
+            <span class="tl-item__period">August 2025</span>
+            <div class="logo-tile logo-tile--wide"><img src="assets/img/logo-mdm.webp" alt="Maisons du Monde" loading="lazy" /></div>
+          </div>
+          <div class="tl-item__body">
+            <h4 class="tl-item__role">Sales associate</h4>
+            <div class="tl-item__place">Maisons du Monde · Summer 2025</div>
+            <p class="tl-item__text">Customer advice, sales techniques and product merchandising. I adapted to different customer profiles by offering tailored solutions, helping to raise the average basket while ensuring a high-quality customer experience.</p>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__side">
+            <span class="tl-item__period">February 2025</span>
+            <div class="logo-tile logo-tile--wide"><img src="assets/img/logo-conforama.webp" alt="Conforama" loading="lazy" /></div>
+          </div>
+          <div class="tl-item__body">
+            <h4 class="tl-item__role">Home-appliance sales intern</h4>
+            <div class="tl-item__place">Conforama</div>
+            <p class="tl-item__text">In my best week I generated more than €10,000 in revenue, a performance on par with, or better than, an experienced salesperson. Advising customers, closing sales and increasing the average basket while adapting to each customer's needs.</p>
+            <ul class="tl-item__kpis">
+              <li><b>€10,000+</b> revenue in one week</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════════════ WORK ═════════════ -->
+    <section class="section projects" id="work">
+      <div class="section__head">
+        <span class="section__index">04</span>
+        <h2 class="section__label">Work</h2>
+      </div>
+      <div class="projects__head">
+        <h3 class="display reveal" data-words>A selection <em>of my projects.</em></h3>
+        <div class="filters reveal" role="tablist" aria-label="Filter projects">
+          <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter" data-filter="com" role="tab" aria-selected="false">Communication</button>
+          <button class="filter" data-filter="mkt" role="tab" aria-selected="false">Marketing</button>
+          <button class="filter" data-filter="digital" role="tab" aria-selected="false">Digital</button>
+          <button class="filter" data-filter="vente" role="tab" aria-selected="false">Sales</button>
+        </div>
+      </div>
+
+      <div class="projects__grid">
+        <!-- Meta Ads -->
+        <article class="card project project--wide reveal" data-cat="digital" tabindex="0" data-tilt data-cursor="View">
+          <div class="project__media project__media--screen">
+            <img src="assets/img/mkt-meta-ads.webp" alt="Meta Ads dashboard for the Groupimmo campaign" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Digital marketing</span><span>2026</span></div>
+            <h4 class="project__title">Meta Ads campaign · Groupimmo<span class="project__arrow">→</span></h4>
+            <p class="project__text">The agency's very first advertising campaign, run end to end: strategy, targeting, creative and optimisation.</p>
+            <ul class="tags"><li>7,204 impressions</li><li>4,563 people reached</li><li>6 leads</li></ul>
+          </div>
+          <template class="project__detail">
+            <p class="lb__kicker">Digital marketing · Groupimmo Colmar</p>
+            <h3 class="lb__title">Building and running a full <em>Meta Ads</em> campaign</h3>
+            <div class="lb__stats">
+              <div><b>7,204</b><span>impressions</span></div>
+              <div><b>4,563</b><span>people reached</span></div>
+              <div><b>6</b><span>qualified leads</span></div>
+              <div><b>5 days</b><span>of delivery</span></div>
+            </div>
+            <p>During my internship at Groupimmo, I had the opportunity to create and fully manage the company's first Meta Ads advertising campaign.</p>
+            <p>From ad strategy to launch, I handled the entire project: campaign design, audience targeting, ad creative and performance optimisation.</p>
+            <p>This strategy brought in 6 qualified leads within a few days, an excellent result in the real-estate sector. The project shows my ability to run a campaign end to end, analyse its performance and deliver concrete results fast.</p>
+            <div class="lb__gallery"><img src="assets/img/mkt-meta-ads.webp" alt="Meta Ads dashboard" loading="lazy" /></div>
+          </template>
+        </article>
+
+        <!-- Lanméa -->
+        <article class="card project reveal" data-cat="mkt" tabindex="0" data-tilt data-cursor="View">
+          <div class="project__media project__media--soft">
+            <img src="assets/img/mkt-lanmea.webp" alt="Lanméa soaps made from sargassum seaweed" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Marketing · Market research</span><span>24-hour challenge</span></div>
+            <h4 class="project__title">Lanméa, seaweed soaps<span class="project__arrow">→</span></h4>
+            <p class="project__text">Creating a company in under 24 hours around an eco-friendly product: soaps made from sargassum seaweed.</p>
+            <ul class="tags"><li>115 respondents</li><li>Survey</li><li>Launch plan</li></ul>
+          </div>
+          <template class="project__detail">
+            <p class="lb__kicker">Marketing · Market analysis</p>
+            <h3 class="lb__title">Lanméa, <em>soaps made from sargassum seaweed</em></h3>
+            <p>This project was part of a group challenge: create a company in under 24 hours while meeting set criteria, including developing an eco-friendly product that is useful for the environment.</p>
+            <p>My team and I chose to design soaps made from sargassum, a seaweed that harms marine ecosystems when it proliferates.</p>
+            <p>I designed and distributed a survey, then built the statistical tables to measure consumer interest. The results allowed us to validate the product's potential with the public.</p>
+            <p>The project was ready to become real: points of sale identified, manufacturing labs found and every commercialisation step mapped out. Everything was set for launch.</p>
+            <div class="lb__gallery lb__gallery--3">
+              <img src="assets/img/mkt-lanmea.webp" alt="Lanméa soap visual" loading="lazy" class="on-light" />
+              <img src="assets/img/mkt-etude-1.webp" alt="Market research results (1)" loading="lazy" />
+              <img src="assets/img/mkt-etude-2.webp" alt="Market research results (2)" loading="lazy" />
+            </div>
+          </template>
+        </article>
+
+        <!-- Public speaking contest -->
+        <article class="card project reveal" data-cat="com" tabindex="0" data-tilt data-cursor="View">
+          <div class="project__media project__media--duo">
+            <img src="assets/img/com-eloquence.webp" alt="Public speaking contest poster" loading="lazy" />
+            <img src="assets/img/com-eloquence-j1.webp" alt="Public speaking contest reminder poster" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Communication · Events</span><span>University</span></div>
+            <h4 class="project__title">Public speaking contest<span class="project__arrow">→</span></h4>
+            <p class="project__text">Two posters for an event I co-organised, shared on social media and around the university.</p>
+            <ul class="tags"><li>Posters</li><li>QR code</li><li>Social media</li></ul>
+          </div>
+          <template class="project__detail">
+            <p class="lb__kicker">Communication · Events</p>
+            <h3 class="lb__title">Posters for the <em>public speaking contest</em></h3>
+            <p>I created two posters to promote an event I co-organised, with clear, attractive and informative visuals to communicate effectively with the audience.</p>
+            <p>The posters were shared on social media to reach a broad, targeted audience, and displayed around the university to maximise visibility among students.</p>
+            <p>I added a QR code to make information and registration easy: a way to improve the user experience and turn prospects into participants.</p>
+            <div class="lb__gallery lb__gallery--2">
+              <img src="assets/img/com-eloquence.webp" alt="Public speaking contest poster" loading="lazy" />
+              <img src="assets/img/com-eloquence-j1.webp" alt="Reminder poster" loading="lazy" />
+            </div>
+          </template>
+        </article>
+
+        <!-- Instagram -->
+        <article class="card project reveal" data-cat="com" tabindex="0" data-tilt data-cursor="View">
+          <div class="project__media project__media--duo">
+            <img src="assets/img/com-noel.webp" alt="Instagram post about the Colmar Christmas market" loading="lazy" />
+            <img src="assets/img/com-concours.webp" alt="Instagram giveaway post" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Communication · Social media</span><span>Internship</span></div>
+            <h4 class="project__title">Instagram posts<span class="project__arrow">→</span></h4>
+            <p class="project__text">A post for the Colmar Christmas market and a giveaway run in partnership with a local pizzeria.</p>
+            <ul class="tags"><li>Instagram</li><li>Giveaway</li><li>Local partnership</li></ul>
+          </div>
+          <template class="project__detail">
+            <p class="lb__kicker">Communication · Social media</p>
+            <h3 class="lb__title">Two <em>Instagram</em> posts</h3>
+            <p><strong>Colmar, the magic of Christmas.</strong> A post designed to showcase the Colmar Christmas market. I worked on how appealing the content was, the choice of images and a punchy message to catch the target audience's attention.</p>
+            <p><strong>Giveaway.</strong> My internship supervisor, a sales agent in the Hohwald area, set up a partnership with a local pizzeria. The idea: give away a gift voucher and a bottle of rosé. In return, the pizzeria gained visibility and new customers, and promoted my supervisor's business to its own clientele.</p>
+            <p>I designed this giveaway to grow the Instagram account's visibility. Result: around twenty new followers, a very good outcome for a recently created account.</p>
+            <div class="lb__gallery lb__gallery--2">
+              <img src="assets/img/com-noel.webp" alt="Colmar Christmas market post" loading="lazy" />
+              <img src="assets/img/com-concours.webp" alt="Giveaway post" loading="lazy" />
+            </div>
+          </template>
+        </article>
+
+        <!-- Feyel -->
+        <article class="card project reveal" data-cat="vente" tabindex="0" data-tilt data-cursor="View">
+          <div class="project__media project__media--soft">
+            <img src="assets/img/vente-feyel.webp" alt="Frédéric Feyel catalogue" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Sales · Negotiation</span><span>University</span></div>
+            <h4 class="project__title">Frédéric Feyel catalogue<span class="project__arrow">→</span></h4>
+            <p class="project__text">A product catalogue designed for a mock negotiation, acting as the brand's representative.</p>
+            <ul class="tags"><li>Sales offer</li><li>Negotiation</li></ul>
+          </div>
+          <template class="project__detail">
+            <p class="lb__kicker">Sales · Negotiation</p>
+            <h3 class="lb__title">The <em>Frédéric Feyel</em> catalogue</h3>
+            <p>I designed a Feyel catalogue for a mock negotiation in which I represented the brand (an Alsatian house founded in 1811).</p>
+            <p>This project highlights my ability to build a coherent sales offer and showcase products in a sales context.</p>
+            <div class="lb__gallery"><img src="assets/img/vente-feyel.webp" alt="Frédéric Feyel catalogue" loading="lazy" /></div>
+          </template>
+        </article>
+
+        <!-- Sales performance -->
+        <article class="card project project--wide reveal" data-cat="vente" tabindex="0" data-tilt data-cursor="View">
+          <div class="project__media project__media--soft">
+            <img src="assets/img/vente-cgr-kpi.webp" alt="Sales performance table at CGR" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Sales · Performance</span><span>2025 — 2026</span></div>
+            <h4 class="project__title">My sales numbers<span class="project__arrow">→</span></h4>
+            <p class="project__text">Winner of the CGR menu sales challenge, no. 1 for menu rate and average basket, €10,000+ in revenue in one week at Conforama.</p>
+            <ul class="tags"><li>CGR</li><li>Conforama</li><li>Maisons du Monde</li></ul>
+          </div>
+          <template class="project__detail">
+            <p class="lb__kicker">Sales · Performance</p>
+            <h3 class="lb__title">Results <em>that speak for themselves</em></h3>
+            <div class="lb__stats">
+              <div><b>41.98%</b><span>menu rate · 1<sup>st</sup></span></div>
+              <div><b>€10.82</b><span>average basket · 1<sup>st</sup></span></div>
+              <div><b>38.1%</b><span>menu challenge · 1<sup>st</sup></span></div>
+              <div><b>€10,000+</b><span>revenue in one week</span></div>
+            </div>
+            <p><strong>CGR Colmar.</strong> I rank first in two of the three categories: menu sales rate and average basket. This student job helps me develop my skills in customer relations, advice, upselling and customer satisfaction.</p>
+            <p><strong>Menu sales challenge.</strong> From 22 to 24 March, a contest was held between the cinema's sales staff. I finished first with a 38.1% menu sales rate, ahead of the whole team, manager included.</p>
+            <blockquote class="lb__quote">
+              <p>“Here are the sales results for the two menus from 22 to 24 March. Well done to Iklima and Denis for their excellent work!”</p>
+              <cite>Message from CGR Colmar management (translated)</cite>
+            </blockquote>
+            <p><strong>Maisons du Monde.</strong> As a summer sales associate, I strengthened my skills in customer advice, product merchandising and sales techniques in a demanding environment.</p>
+            <p><strong>Conforama.</strong> In my best week as an intern, I generated more than €10,000 in revenue, meeting and even exceeding my targets.</p>
+            <div class="lb__gallery lb__gallery--3">
+              <img src="assets/img/vente-cgr-kpi.webp" alt="CGR sales indicator ranking" loading="lazy" />
+              <img src="assets/img/vente-cgr-menus.webp" alt="CGR menu sales results" loading="lazy" />
+              <img src="assets/img/vente-badge-mdm.webp" alt="Maisons du Monde sales badge" loading="lazy" class="on-light" />
+            </div>
+          </template>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════════════ PASSIONS ═════════════ -->
+    <section class="section" id="passions">
+      <div class="section__head">
+        <span class="section__index">05</span>
+        <h2 class="section__label">About me</h2>
+      </div>
+      <h3 class="display reveal" data-words>What keeps me <em>moving forward.</em></h3>
+      <div class="bento">
+        <article class="passion passion--kosovo reveal">
+          <img src="assets/img/passion-kosovo.webp" alt="Prizren, Kosovo" loading="lazy" />
+          <div class="passion__body">
+            <span class="passion__tag">Roots</span>
+            <h4>Kosovo</h4>
+            <p>I was born in Kosovo and grew up there until the age of 6. In 2012, I moved to France.</p>
+          </div>
+        </article>
+        <article class="passion passion--auto reveal">
+          <img src="assets/img/passion-auto.webp" alt="Race cars at night" loading="lazy" />
+          <div class="passion__body">
+            <span class="passion__tag">Passion</span>
+            <h4>Cars</h4>
+            <p>I've been passionate about cars since I was very young, an interest that still guides my path today.</p>
+          </div>
+        </article>
+        <article class="passion passion--nature reveal">
+          <img src="assets/img/passion-nature.webp" alt="Mountain landscape" loading="lazy" />
+          <div class="passion__body">
+            <span class="passion__tag">Recharge</span>
+            <h4>Nature</h4>
+            <p>A true refuge. Taking in the landscapes or listening to the sounds around me helps me refocus, step back and recharge.</p>
+          </div>
+        </article>
+        <article class="passion passion--sport reveal">
+          <img src="assets/img/passion-sport.webp" alt="Running by a lake" loading="lazy" />
+          <div class="passion__body">
+            <span class="passion__tag">Discipline</span>
+            <h4>Sport</h4>
+            <p>I lost a lot of weight and came a long way. Today: weight training, running and football.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════════════ CONTACT ═════════════ -->
+    <section class="section contact" id="contact">
+      <div class="contact__glow" aria-hidden="true"></div>
+      <div class="section__head">
+        <span class="section__index">06</span>
+        <h2 class="section__label">Contact</h2>
+      </div>
+      <h3 class="contact__title reveal" data-words>Let's talk about your <em>next project.</em></h3>
+      <button class="contact__email reveal" data-email="hamza.denis.pro@gmail.com" data-magnetic>
+        <span>hamza.denis.pro@gmail.com</span>
+        <small>Click to copy</small>
+      </button>
+      <div class="contact__actions reveal">
+        <a class="btn" href="assets/CV-Hamza-Denis.pdf" download data-magnetic>Download my CV (FR) <span class="arrow">↓</span></a>
+        <a class="btn btn--ghost" href="tel:+33650450264" data-magnetic>+33 6 50 45 02 64</a>
+        <a class="btn btn--ghost" href="mailto:hamza.denis.pro@gmail.com" data-magnetic>Send an email <span class="arrow">→</span></a>
+      </div>
+      <ul class="contact__socials reveal">
+        <li><a href="https://www.linkedin.com/in/denis-hamza-7693b5358" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><span>Colmar, France</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <div class="bigname" aria-hidden="true"><span data-fill>Hamza Denis</span></div>
+
+  <footer class="footer">
+    <span>© <span data-year>2026</span> Hamza Denis</span>
+    <a href="#top" class="footer__top" data-magnetic>Back to top ↑</a>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lb" role="dialog" aria-modal="true" aria-label="Project details" hidden>
+    <div class="lb__backdrop" data-close></div>
+    <div class="lb__panel" data-lenis-prevent>
+      <button class="lb__close" data-close aria-label="Close">✕</button>
+      <div class="lb__content"></div>
+    </div>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/vendor/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

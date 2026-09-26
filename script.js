@@ -5,6 +5,7 @@
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   $("[data-year]").textContent = new Date().getFullYear();
+  const EN = document.documentElement.lang === "en";
 
   /* ───────────── Split hero first name into letters ───────────── */
   $$(".split").forEach((el) => {
@@ -51,7 +52,7 @@
     const end = new Date(el.dataset.end).getTime();
     const pct = Math.round(Math.min(1, Math.max(0, (Date.now() - start) / (end - start))) * 100);
     el.style.setProperty("--pct", pct + "%");
-    $(".edu__pct", el).textContent = `${pct} % du parcours`;
+    $(".edu__pct", el).textContent = EN ? `${pct}% completed` : `${pct} % du parcours`;
   });
 
   /* ───────────── Loader ───────────── */
@@ -108,7 +109,7 @@
   }
 
   /* ───────────── Scroll reveal & counters ───────────── */
-  const fmt = new Intl.NumberFormat("fr-FR");
+  const fmt = new Intl.NumberFormat(EN ? "en-GB" : "fr-FR");
   const countUp = (el) => {
     const target = +el.dataset.count;
     if (reduceMotion) return (el.textContent = fmt.format(target));
@@ -282,7 +283,7 @@
   emailBtn.addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(emailBtn.dataset.email);
-      showToast("Adresse e-mail copiée ✓");
+      showToast(EN ? "Email address copied ✓" : "Adresse e-mail copiée ✓");
     } catch {
       location.href = `mailto:${emailBtn.dataset.email}`;
     }

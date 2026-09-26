@@ -9,6 +9,7 @@
   <meta property="og:title" content="Hamza Denis — Portfolio" />
   <meta property="og:description" content="Étudiant en BUT Techniques de Commercialisation à Colmar. Vente, marketing digital, communication." />
   <meta property="og:image" content="assets/img/hamza.webp" />
+  <link rel="alternate" hreflang="en" href="en.html" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1630'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='30' fill='%239cc3ff'%3EHD%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,16 +38,20 @@
       <a href="#realisations">Réalisations</a>
       <a href="#passions">Passions</a>
     </nav>
-    <a href="#contact" class="btn btn--small" data-magnetic>Contact</a>
+    <div class="nav__right">
+      <a href="en.html" class="lang" hreflang="en" lang="en" aria-label="English version"><b>FR</b><span>/</span>EN</a>
+      <a href="#contact" class="btn btn--small" data-magnetic>Contact</a>
+    </div>
     <button class="nav__burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
   </header>
-  <div class="menu" aria-hidden="true">
+  <div class="menu" aria-hidden="true" data-lenis-prevent>
     <a href="#profil">Profil</a>
     <a href="#parcours">Parcours</a>
     <a href="#experience">Expériences</a>
     <a href="#realisations">Réalisations</a>
     <a href="#passions">Passions</a>
     <a href="#contact">Contact</a>
+    <a href="en.html" class="menu__lang" hreflang="en" lang="en">English version →</a>
   </div>
 
   <main id="top">
@@ -131,8 +136,8 @@
               <span class="stat__label">leads qualifiés générés pour Groupimmo</span>
             </div>
             <div class="stat reveal">
-              <div class="stat__value"><span class="stat__pre">N°</span><b data-count="1">0</b></div>
-              <span class="stat__label">sur 2 des 3 indicateurs de vente au CGR</span>
+              <div class="stat__value"><b data-count="1">0</b><span class="stat__pre">er</span></div>
+              <span class="stat__label">au challenge de vente de menus du CGR</span>
             </div>
           </div>
         </div>
@@ -485,7 +490,8 @@
         <small>Cliquer pour copier</small>
       </button>
       <div class="contact__actions reveal">
-        <a class="btn" href="tel:+33650450264" data-magnetic>06 50 45 02 64</a>
+        <a class="btn" href="assets/CV-Hamza-Denis.pdf" download data-magnetic>Télécharger mon CV <span class="arrow">↓</span></a>
+        <a class="btn btn--ghost" href="tel:+33650450264" data-magnetic>06 50 45 02 64</a>
         <a class="btn btn--ghost" href="mailto:hamza.denis.pro@gmail.com" data-magnetic>Envoyer un e-mail <span class="arrow">→</span></a>
       </div>
       <ul class="contact__socials reveal">
@@ -505,7 +511,7 @@
   <!-- Lightbox -->
   <div class="lb" role="dialog" aria-modal="true" aria-label="Détail de la réalisation" hidden>
     <div class="lb__backdrop" data-close></div>
-    <div class="lb__panel">
+    <div class="lb__panel" data-lenis-prevent>
       <button class="lb__close" data-close aria-label="Fermer">✕</button>
       <div class="lb__content"></div>
     </div>

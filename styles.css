@@ -788,3 +788,22 @@ body.is-ready .badge { opacity: 1; transform: none; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   html { scroll-behavior: auto; }
 }
+
+.stat__value b + .stat__pre { font-size: 0.42em; vertical-align: 1.1em; margin-left: 3px; color: var(--accent); }
+
+/* Language switch */
+.nav__right { display: flex; align-items: center; gap: 10px; }
+.lang {
+  display: inline-flex; gap: 5px; align-items: center;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: var(--muted);
+  padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line);
+  transition: color 0.3s, border-color 0.3s;
+}
+.lang b { color: var(--text); font-weight: 700; }
+.lang span { opacity: 0.4; }
+.lang:hover { color: var(--text); border-color: var(--line-strong); }
+.menu .menu__lang { font-family: var(--sans); font-size: 16px; color: var(--accent); margin-top: 24px; }
+@media (max-width: 900px) {
+  .nav__right { margin-left: auto; }
+  .nav__right .btn--small { display: none; }
+}

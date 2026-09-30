@@ -3,10 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DEHA Watches — Montres premium à moins de 250 €</title>
-  <meta name="description" content="DEHA Watches : montres premium à moins de 250 €. Acier 316L, verre anti-rayures, livraison 4 à 7 jours, garantie 2 ans." />
+  <title>DEHA Watches — Trois montres, zéro compromis</title>
+  <meta name="description" content="DEHA Watches : trois montres en acier 316L à moins de 250 €. Chrono Panda, Riviera Blanc et Riviera Bleu. Livraison 4 à 7 jours, garantie 2 ans." />
   <meta name="theme-color" content="#0e0e0e" />
+  <meta property="og:title" content="DEHA Watches" />
+  <meta property="og:description" content="Trois montres en acier 316L à moins de 250 €." />
+  <meta property="og:image" content="images/riviera-bleu.webp" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0e0e'/%3E%3Ctext x='50%25' y='57%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='34' fill='%23c9a96e'%3ED%3C/text%3E%3C/svg%3E" />
+  <link rel="preload" as="image" href="images/riviera-bleu.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -15,8 +19,8 @@
 <body>
   <div class="announce">
     <div class="announce__track">
-      <span>Livraison offerte dès 99 €</span><span>Garantie 2 ans</span><span>Retours sous 30 jours</span><span>Paiement sécurisé</span>
-      <span>Livraison offerte dès 99 €</span><span>Garantie 2 ans</span><span>Retours sous 30 jours</span><span>Paiement sécurisé</span>
+      <span>Livraison offerte</span><span>Garantie 2 ans</span><span>Retours sous 30 jours</span><span>Paiement sécurisé</span>
+      <span>Livraison offerte</span><span>Garantie 2 ans</span><span>Retours sous 30 jours</span><span>Paiement sécurisé</span>
     </div>
   </div>
 
@@ -26,13 +30,13 @@
         <svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
       </button>
       <nav class="nav nav--left" aria-label="Navigation principale">
-        <a href="#collections">Collections</a>
-        <a href="#boutique">Boutique</a>
+        <a href="#montres">Les montres</a>
+        <a href="#comparer">Comparer</a>
         <a href="#avis">Avis</a>
       </nav>
       <a href="#top" class="logo" aria-label="DEHA Watches, accueil">DEHA<span>WATCHES</span></a>
       <nav class="nav nav--right">
-        <a href="#engagements">Nos engagements</a>
+        <a href="#pourquoi">Pourquoi DEHA</a>
         <a href="#faq">FAQ</a>
         <button class="icon-btn cart-btn" aria-label="Ouvrir le panier">
           <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
@@ -41,10 +45,10 @@
       </nav>
     </div>
     <nav class="mobile-nav" aria-label="Navigation mobile">
-      <a href="#collections">Collections</a>
-      <a href="#boutique">Boutique</a>
+      <a href="#montres">Les montres</a>
+      <a href="#comparer">Comparer</a>
       <a href="#avis">Avis</a>
-      <a href="#engagements">Nos engagements</a>
+      <a href="#pourquoi">Pourquoi DEHA</a>
       <a href="#faq">FAQ</a>
     </nav>
   </header>
@@ -53,26 +57,24 @@
     <section class="hero">
       <div class="container hero__inner">
         <div class="hero__text">
-          <p class="eyebrow">Nouvelle collection 2026</p>
-          <h1>Montres premium<br /><em>à moins de 250&nbsp;€</em></h1>
-          <p class="hero__lead">L'élégance d'une belle montre, sans le prix d'une grande maison. Acier 316L, verre anti-rayures et finitions soignées, pour tous les jours.</p>
+          <p class="eyebrow">La collection DEHA</p>
+          <h1>Trois montres.<br /><em>Zéro compromis.</em></h1>
+          <p class="hero__lead">Nous avons choisi de ne faire que trois montres, et de les faire bien. Acier 316L, finitions polies et brossées, à moins de 250&nbsp;€.</p>
           <div class="hero__cta">
-            <a href="#boutique" class="btn btn--gold">Découvrir la boutique</a>
-            <a href="#collections" class="btn btn--ghost">Voir les collections</a>
+            <a href="#montres" class="btn btn--dark">Découvrir les 3 montres</a>
+            <a href="#comparer" class="btn btn--line">Comparer</a>
           </div>
-          <div class="hero__rating">
-            <span class="stars">★★★★★</span>
-            <span>Clients satisfaits partout en France</span>
-          </div>
+          <ul class="hero__points">
+            <li>Livraison offerte</li>
+            <li>Garantie 2 ans</li>
+            <li>Retours 30 jours</li>
+          </ul>
         </div>
-        <div class="hero__visual">
-          <div class="hero__halo"></div>
-          <div class="hero__watch" data-watch="hero"></div>
-        </div>
+        <div class="hero__trio" data-hero></div>
       </div>
     </section>
 
-    <section class="trust" id="engagements">
+    <section class="trust">
       <div class="container trust__grid">
         <div class="trust__item">
           <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg>
@@ -84,77 +86,76 @@
         </div>
         <div class="trust__item">
           <svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
-          <div><strong>Livraison 4 à 7 jours</strong><span>Suivi inclus</span></div>
+          <div><strong>Livraison 4 à 7 jours</strong><span>Offerte, avec suivi</span></div>
         </div>
         <div class="trust__item">
           <svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>
-          <div><strong>Garantie 2 ans</strong><span>Sur toutes nos montres</span></div>
+          <div><strong>Garantie 2 ans</strong><span>Sur chaque montre</span></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="collections">
+    <section class="section" id="montres">
       <div class="container">
         <div class="section__head">
-          <p class="eyebrow">Nos univers</p>
-          <h2>Les collections</h2>
-          <p>Six familles, un même souci du détail.</p>
+          <p class="eyebrow">La collection</p>
+          <h2>Choisissez la vôtre</h2>
+          <p>Trois caractères, une même exigence.</p>
         </div>
-        <div class="collections" data-collections></div>
+        <div class="cards" data-cards></div>
       </div>
     </section>
 
-    <section class="section section--light" id="boutique">
+    <div data-showcases></div>
+
+    <section class="section section--light" id="comparer">
       <div class="container">
         <div class="section__head">
-          <p class="eyebrow">La boutique</p>
-          <h2>Toutes nos montres</h2>
+          <p class="eyebrow">En détail</p>
+          <h2>Comparer les trois</h2>
         </div>
-        <div class="filters" role="tablist" aria-label="Filtrer par collection" data-filters></div>
-        <div class="products" data-products></div>
+        <div class="compare" data-compare></div>
       </div>
     </section>
 
-    <section class="banner">
+    <section class="banner" id="pourquoi">
       <div class="container banner__inner">
-        <div class="banner__visual" data-watch="banner"></div>
         <div class="banner__text">
           <p class="eyebrow">Pourquoi DEHA</p>
-          <h2>Le luxe accessible,<br /><em>sans compromis</em></h2>
-          <p>Nous travaillons en direct avec nos ateliers, sans intermédiaire ni boutique physique. Résultat : des matériaux dignes des grandes maisons, à un prix juste.</p>
-          <ul class="checks">
-            <li>Boîtier et bracelet en acier inoxydable 316L</li>
-            <li>Mouvements fiables et précis</li>
-            <li>Étanchéité 5 ATM sur la plupart des modèles</li>
-            <li>Écrin cadeau offert avec chaque montre</li>
-          </ul>
-          <a href="#boutique" class="btn btn--gold">Choisir ma montre</a>
+          <h2>Moins de modèles,<br /><em>plus d'exigence</em></h2>
+          <p>Plutôt qu'un catalogue interminable, nous concentrons tout notre soin sur trois montres. Chaque pièce est contrôlée avant expédition et livrée dans son écrin.</p>
         </div>
+        <ul class="banner__stats">
+          <li><strong>316L</strong><span>Acier inoxydable</span></li>
+          <li><strong>2 ans</strong><span>De garantie</span></li>
+          <li><strong>30 j</strong><span>Pour changer d'avis</span></li>
+          <li><strong>4-7 j</strong><span>Livraison offerte</span></li>
+        </ul>
       </div>
     </section>
 
     <section class="section" id="avis">
       <div class="container">
         <div class="section__head">
-          <p class="eyebrow">Ils nous font confiance</p>
+          <p class="eyebrow">Ils les portent</p>
           <h2>Avis clients</h2>
         </div>
         <!-- Exemples de témoignages : à remplacer par de vrais avis clients -->
         <div class="reviews">
           <figure class="review">
             <span class="stars">★★★★★</span>
-            <blockquote>« Très belle montre, bien plus premium que ce que j'imaginais pour ce prix. Livraison rapide. »</blockquote>
-            <figcaption>Client exemple · Chronographe</figcaption>
+            <blockquote>« Le Chrono Panda est superbe, le contraste du cadran fait tout. Bien plus premium que ce que j'imaginais. »</blockquote>
+            <figcaption>Client exemple · Chrono Panda</figcaption>
           </figure>
           <figure class="review">
             <span class="stars">★★★★★</span>
-            <blockquote>« Offerte à mon mari, il ne la quitte plus. L'écrin est magnifique. »</blockquote>
-            <figcaption>Cliente exemple · Classique</figcaption>
+            <blockquote>« Le bleu de la Riviera change selon la lumière. Je ne la quitte plus. »</blockquote>
+            <figcaption>Client exemple · Riviera Bleu</figcaption>
           </figure>
           <figure class="review">
             <span class="stars">★★★★★</span>
-            <blockquote>« Finitions impeccables, le bracelet acier est lourd et agréable au poignet. »</blockquote>
-            <figcaption>Client exemple · Sport-chic</figcaption>
+            <blockquote>« Offerte à mon mari, la Riviera Blanc est très élégante, même en costume. »</blockquote>
+            <figcaption>Cliente exemple · Riviera Blanc</figcaption>
           </figure>
         </div>
       </div>
@@ -168,35 +169,35 @@
         </div>
         <details class="faq">
           <summary>Quels sont les délais de livraison&nbsp;?</summary>
-          <p>Votre commande est expédiée sous 24 à 48 h et livrée en 4 à 7 jours ouvrés, avec un numéro de suivi.</p>
+          <p>Votre commande est expédiée sous 24 à 48 h et livrée en 4 à 7 jours ouvrés, gratuitement et avec un numéro de suivi.</p>
+        </details>
+        <details class="faq">
+          <summary>Quelle montre choisir&nbsp;?</summary>
+          <p>Le Chrono Panda pour un look sportif et affirmé. La Riviera Blanc pour une élégance discrète au bureau comme le week-end. La Riviera Bleu pour un cadran qui attire le regard.</p>
         </details>
         <details class="faq">
           <summary>Mes montres sont-elles garanties&nbsp;?</summary>
-          <p>Toutes nos montres sont garanties 2 ans contre tout défaut de fabrication.</p>
+          <p>Oui, chaque montre est garantie 2 ans contre tout défaut de fabrication.</p>
         </details>
         <details class="faq">
           <summary>Puis-je retourner ma montre&nbsp;?</summary>
-          <p>Oui, vous disposez de 30 jours après réception pour nous la retourner dans son état d'origine.</p>
-        </details>
-        <details class="faq">
-          <summary>Les montres sont-elles étanches&nbsp;?</summary>
-          <p>La plupart de nos modèles sont étanches 5 ATM : ils résistent aux éclaboussures et à la pluie. Évitez la baignade.</p>
+          <p>Vous disposez de 30 jours après réception pour nous la retourner dans son état d'origine.</p>
         </details>
         <details class="faq">
           <summary>Le bracelet est-il ajustable&nbsp;?</summary>
-          <p>Oui, les bracelets acier se raccourcissent facilement en retirant des maillons. Un outil est fourni.</p>
+          <p>Oui, le bracelet acier se raccourcit en retirant des maillons. L'outil est fourni avec la montre.</p>
         </details>
       </div>
     </section>
 
     <section class="newsletter">
       <div class="container container--narrow">
-        <h2>-10&nbsp;% sur votre première commande</h2>
-        <p>Inscrivez-vous pour recevoir nos nouveautés et offres en avant-première.</p>
+        <h2>-10&nbsp;% sur votre première montre</h2>
+        <p>Inscrivez-vous pour recevoir votre code et nos prochaines éditions.</p>
         <form class="newsletter__form" data-newsletter>
           <label class="sr-only" for="nl-email">Adresse e-mail</label>
           <input id="nl-email" type="email" placeholder="Votre adresse e-mail" required />
-          <button class="btn btn--gold" type="submit">Je m'inscris</button>
+          <button class="btn btn--dark" type="submit">Je m'inscris</button>
         </form>
         <p class="newsletter__msg" aria-live="polite"></p>
       </div>
@@ -207,13 +208,11 @@
     <div class="container footer__grid">
       <div>
         <a href="#top" class="logo logo--footer">DEHA<span>WATCHES</span></a>
-        <p>Montres premium à moins de 250 €. Conçues pour durer, pensées pour tous les jours.</p>
+        <p>Trois montres en acier 316L, pensées pour durer.</p>
       </div>
       <div>
-        <h3>Boutique</h3>
-        <a href="#collections">Collections</a>
-        <a href="#boutique">Toutes les montres</a>
-        <a href="#avis">Avis clients</a>
+        <h3>Les montres</h3>
+        <div data-footer-links></div>
       </div>
       <div>
         <h3>Aide</h3>
@@ -234,6 +233,26 @@
     </div>
   </footer>
 
+  <!-- Fiche produit -->
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal__box">
+      <button class="icon-btn modal__close" data-modal-close aria-label="Fermer"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <div class="modal__media"><img alt="" data-modal-img /></div>
+      <div class="modal__body">
+        <p class="eyebrow" data-modal-tag></p>
+        <h2 id="modal-title" data-modal-name></h2>
+        <div class="price" data-modal-price></div>
+        <p class="modal__desc" data-modal-desc></p>
+        <div class="variants" data-modal-variants></div>
+        <div class="modal__buy">
+          <div class="qty"><button data-mq="-1" aria-label="Moins">−</button><span data-modal-qty>1</span><button data-mq="1" aria-label="Plus">+</button></div>
+          <button class="btn btn--dark btn--grow" data-modal-add>Ajouter au panier</button>
+        </div>
+        <ul class="specs" data-modal-specs></ul>
+      </div>
+    </div>
+  </div>
+
   <div class="overlay" data-overlay></div>
   <aside class="drawer" aria-label="Panier" aria-hidden="true">
     <div class="drawer__head">
@@ -241,12 +260,19 @@
       <button class="icon-btn" data-close aria-label="Fermer le panier"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
     <div class="drawer__body" data-cart-items></div>
+    <div class="drawer__upsell" data-upsell></div>
     <div class="drawer__foot">
       <div class="drawer__total"><span>Total</span><strong data-cart-total>0,00 €</strong></div>
-      <p class="drawer__note" data-cart-note></p>
-      <button class="btn btn--gold btn--block" data-checkout>Passer commande</button>
+      <p class="drawer__note">Livraison offerte · Garantie 2 ans</p>
+      <button class="btn btn--dark btn--block" data-checkout>Passer commande</button>
     </div>
   </aside>
+
+  <div class="sticky-buy" data-sticky>
+    <img alt="" data-sticky-img />
+    <div><strong data-sticky-name></strong><span data-sticky-price></span></div>
+    <button class="btn btn--dark" data-sticky-add>Ajouter</button>
+  </div>
 
   <div class="toast" aria-live="polite"></div>
 

@@ -834,7 +834,7 @@ body.is-ready .badge { opacity: 1; transform: none; }
 .chart__title { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
 .bars { list-style: none; display: grid; gap: 7px; }
 .bar {
-  position: relative; display: grid; grid-template-columns: 92px 1fr 58px; align-items: center; gap: 12px;
+  position: relative; display: grid; grid-template-columns: 104px 1fr 58px; align-items: center; gap: 12px;
   font-size: 13px; color: var(--muted); outline: none; border-radius: 6px;
 }
 .bar__name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -857,7 +857,7 @@ body.is-ready .badge { opacity: 1; transform: none; }
 .bar:hover, .bar:focus-visible { color: var(--text); }
 .bar:hover .bar__track i, .bar:focus-visible .bar__track i { filter: brightness(1.2); }
 .bar::after {
-  content: attr(data-tip); position: absolute; left: 104px; bottom: calc(100% + 6px); z-index: 3;
+  content: attr(data-tip); position: absolute; left: 116px; bottom: calc(100% + 6px); z-index: 3;
   padding: 6px 10px; border-radius: 8px; white-space: nowrap; pointer-events: none;
   font-size: 12px; font-weight: 600; color: var(--bg); background: var(--text);
   opacity: 0; transform: translateY(4px); transition: opacity 0.2s, transform 0.2s;
@@ -931,17 +931,12 @@ body.is-ready .badge { opacity: 1; transform: none; }
 .tool b { margin-top: 12px; font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
 .tool small { font-size: 13px; color: var(--muted); line-height: 1.4; }
 .tool__icon {
-  width: 48px; height: 48px; border-radius: 13px; display: grid; place-items: center;
-  font-weight: 800; font-size: 22px; color: #fff; transition: transform 0.6s var(--ease);
+  width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center;
+  background: #fff; border: 1px solid var(--line); transition: transform 0.6s var(--ease);
 }
+.tool__icon img { width: 34px; height: 34px; object-fit: contain; }
+.tool__icon--dark { background: #111; border-color: #111; }
 .tool:hover .tool__icon { transform: rotate(-8deg) scale(1.08); }
-.tool__icon svg { width: 24px; height: 24px; }
-.tool__icon--canva { background: linear-gradient(135deg, #00c4cc, #7d2ae8); font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 30px; }
-.tool__icon--meta { background: linear-gradient(135deg, #0668e1, #0091ff); font-size: 30px; }
-.tool__icon--capcut { background: #111; }
-.tool__icon--word { background: linear-gradient(135deg, #2b7cd3, #185abd); }
-.tool__icon--ppt { background: linear-gradient(135deg, #ed6c47, #c43e1c); }
-.tool__icon--forms { background: linear-gradient(135deg, #8e5ae8, #673ab7); }
 
 @media (max-width: 1100px) { .toolbox { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 900px) {
@@ -949,8 +944,8 @@ body.is-ready .badge { opacity: 1; transform: none; }
 }
 @media (max-width: 520px) {
   .toolbox { grid-template-columns: repeat(2, 1fr); }
-  .bar { grid-template-columns: 74px 1fr 46px; gap: 8px; font-size: 12px; }
-  .bar::after { left: 80px; }
+  .bar { grid-template-columns: 84px 1fr 46px; gap: 8px; font-size: 12px; }
+  .bar::after { left: 90px; }
   .dash__kpis { gap: 6px; }
   .dash__kpis div { padding: 10px; }
   .fbar { grid-template-columns: 74px 1fr; }

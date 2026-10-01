@@ -157,6 +157,7 @@
       </div>
     </div>
 
+    <div class="band band--light">
     <!-- ═════════════ EDUCATION ═════════════ -->
     <section class="section" id="education">
       <div class="section__head">
@@ -190,10 +191,39 @@
       </div>
     </section>
 
+    <!-- ═════════════ TOOLS ═════════════ -->
+    <section class="section tools" id="tools">
+      <div class="section__head">
+        <span class="section__index">03</span>
+        <h2 class="section__label">Skills &amp; tools</h2>
+      </div>
+      <h3 class="display reveal" data-words>My skills, <em>my tools.</em></h3>
+      <div class="skillsets">
+        <article class="card skillset reveal">
+          <h4>Sales &amp; customer relations</h4>
+          <ul class="tags"><li>Selling &amp; customer advice</li><li>Prospecting</li><li>Negotiation</li><li>Customer loyalty</li><li>Sales pitching</li><li>Upselling</li></ul>
+        </article>
+        <article class="card skillset reveal">
+          <h4>Marketing &amp; communication</h4>
+          <ul class="tags"><li>Sales materials</li><li>Digital communication</li><li>Social media</li><li>Content creation</li><li>Meta Ads</li><li>Market analysis</li></ul>
+        </article>
+      </div>
+      <p class="tools__head reveal">Tools I use</p>
+      <ul class="toolbox">
+          <li class="tool reveal" style="transition-delay:0ms"><span class="tool__icon tool__icon--canva">C</span><b>Canva</b><small>Posters, posts, catalogues</small></li>
+          <li class="tool reveal" style="transition-delay:60ms"><span class="tool__icon tool__icon--meta">∞</span><b>Meta Ads</b><small>Ad campaigns</small></li>
+          <li class="tool reveal" style="transition-delay:120ms"><span class="tool__icon tool__icon--capcut"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></span><b>CapCut</b><small>Video editing</small></li>
+          <li class="tool reveal" style="transition-delay:180ms"><span class="tool__icon tool__icon--word">W</span><b>Word</b><small>Sales documents</small></li>
+          <li class="tool reveal" style="transition-delay:240ms"><span class="tool__icon tool__icon--ppt">P</span><b>PowerPoint</b><small>Presentations</small></li>
+          <li class="tool reveal" style="transition-delay:300ms"><span class="tool__icon tool__icon--forms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 7h9M8 12h9M8 17h6"/><circle cx="4.5" cy="7" r=".6" fill="currentColor"/><circle cx="4.5" cy="12" r=".6" fill="currentColor"/><circle cx="4.5" cy="17" r=".6" fill="currentColor"/></svg></span><b>Google Forms</b><small>Surveys &amp; research</small></li>
+      </ul>
+    </section>
+    </div>
+
     <!-- ═════════════ EXPERIENCE ═════════════ -->
     <section class="section experience" id="experience">
       <div class="section__head">
-        <span class="section__index">03</span>
+        <span class="section__index">04</span>
         <h2 class="section__label">Experience</h2>
       </div>
       <h3 class="display reveal" data-words>In the field, <em>measurable results.</em></h3>
@@ -265,7 +295,7 @@
     <!-- ═════════════ WORK ═════════════ -->
     <section class="section projects" id="work">
       <div class="section__head">
-        <span class="section__index">04</span>
+        <span class="section__index">05</span>
         <h2 class="section__label">Work</h2>
       </div>
       <div class="projects__head">
@@ -282,8 +312,19 @@
       <div class="projects__grid">
         <!-- Meta Ads -->
         <article class="card project project--wide reveal" data-cat="digital" tabindex="0" data-tilt data-cursor="View">
-          <div class="project__media project__media--screen">
-            <img src="assets/img/mkt-meta-ads.webp" alt="Meta Ads dashboard for the Groupimmo campaign" loading="lazy" />
+          <div class="project__media project__media--chart">
+            <div class="dash">
+              <div class="dash__head"><span class="dash__live"></span>Meta Ads campaign · Groupimmo<small>5 days · 2 ads</small></div>
+              <div class="dash__kpis">
+                <div><b data-count="7204">0</b><span>Impressions</span></div>
+                <div><b data-count="4563">0</b><span>People reached</span></div>
+                <div class="is-key"><b data-count="6">0</b><span>Qualified leads</span></div>
+              </div>
+              <div class="dash__funnel">
+                <div class="fbar" style="--v:1"><span>Impressions</span><i></i></div>
+                <div class="fbar" style="--v:0.6334"><span>Reach</span><i></i></div>
+              </div>
+            </div>
           </div>
           <div class="project__body">
             <div class="project__meta"><span>Digital marketing</span><span>2026</span></div>
@@ -405,8 +446,21 @@
 
         <!-- Sales performance -->
         <article class="card project project--wide reveal" data-cat="vente" tabindex="0" data-tilt data-cursor="View">
-          <div class="project__media project__media--soft">
-            <img src="assets/img/vente-cgr-kpi.webp" alt="Sales performance table at CGR" loading="lazy" />
+          <div class="project__media project__media--chart">
+      <figure class="chart" aria-label="Menu sales challenge ranking">
+        <figcaption class="chart__title">Menu sales challenge · CGR · 22–24 March</figcaption>
+        <ol class="bars">
+          <li class="bar is-me" style="--v:0.9525" tabindex="0" data-tip="37 menus out of 97 sales"><span class="bar__name">Me</span><span class="bar__track"><i></i></span><span class="bar__val">38.1%</span></li>
+          <li class="bar" style="--v:0.8175" tabindex="0" data-tip="17 menus out of 52 sales"><span class="bar__name">Manager*</span><span class="bar__track"><i></i></span><span class="bar__val">32.7%</span></li>
+          <li class="bar" style="--v:0.7825" tabindex="0" data-tip="56 menus out of 179 sales"><span class="bar__name">Colleague 1</span><span class="bar__track"><i></i></span><span class="bar__val">31.3%</span></li>
+          <li class="bar" style="--v:0.6625" tabindex="0" data-tip="13 menus out of 49 sales"><span class="bar__name">Colleague 2</span><span class="bar__track"><i></i></span><span class="bar__val">26.5%</span></li>
+          <li class="bar" style="--v:0.6000" tabindex="0" data-tip="25 menus out of 104 sales"><span class="bar__name">Colleague 3</span><span class="bar__track"><i></i></span><span class="bar__val">24%</span></li>
+          <li class="bar" style="--v:0.4900" tabindex="0" data-tip="10 menus out of 51 sales"><span class="bar__name">Colleague 4</span><span class="bar__track"><i></i></span><span class="bar__val">19.6%</span></li>
+          <li class="bar" style="--v:0.4250" tabindex="0" data-tip="69 menus out of 406 sales"><span class="bar__name">Colleague 5</span><span class="bar__track"><i></i></span><span class="bar__val">17%</span></li>
+          <li class="bar" style="--v:0.3725" tabindex="0" data-tip="7 menus out of 47 sales"><span class="bar__name">Colleague 6</span><span class="bar__track"><i></i></span><span class="bar__val">14.9%</span></li>
+        </ol>
+        <p class="chart__note">Share of menus in total sales · * not competing</p>
+      </figure>
           </div>
           <div class="project__body">
             <div class="project__meta"><span>Sales · Performance</span><span>2025 — 2026</span></div>
@@ -423,6 +477,22 @@
               <div><b>38.1%</b><span>menu challenge · 1<sup>st</sup></span></div>
               <div><b>€10,000+</b><span>revenue in one week</span></div>
             </div>
+            <div class="lb__chart">
+      <figure class="chart" aria-label="Menu sales challenge ranking">
+        <figcaption class="chart__title">Menu sales challenge · CGR · 22–24 March</figcaption>
+        <ol class="bars">
+          <li class="bar is-me" style="--v:0.9525" tabindex="0" data-tip="37 menus out of 97 sales"><span class="bar__name">Me</span><span class="bar__track"><i></i></span><span class="bar__val">38.1%</span></li>
+          <li class="bar" style="--v:0.8175" tabindex="0" data-tip="17 menus out of 52 sales"><span class="bar__name">Manager*</span><span class="bar__track"><i></i></span><span class="bar__val">32.7%</span></li>
+          <li class="bar" style="--v:0.7825" tabindex="0" data-tip="56 menus out of 179 sales"><span class="bar__name">Colleague 1</span><span class="bar__track"><i></i></span><span class="bar__val">31.3%</span></li>
+          <li class="bar" style="--v:0.6625" tabindex="0" data-tip="13 menus out of 49 sales"><span class="bar__name">Colleague 2</span><span class="bar__track"><i></i></span><span class="bar__val">26.5%</span></li>
+          <li class="bar" style="--v:0.6000" tabindex="0" data-tip="25 menus out of 104 sales"><span class="bar__name">Colleague 3</span><span class="bar__track"><i></i></span><span class="bar__val">24%</span></li>
+          <li class="bar" style="--v:0.4900" tabindex="0" data-tip="10 menus out of 51 sales"><span class="bar__name">Colleague 4</span><span class="bar__track"><i></i></span><span class="bar__val">19.6%</span></li>
+          <li class="bar" style="--v:0.4250" tabindex="0" data-tip="69 menus out of 406 sales"><span class="bar__name">Colleague 5</span><span class="bar__track"><i></i></span><span class="bar__val">17%</span></li>
+          <li class="bar" style="--v:0.3725" tabindex="0" data-tip="7 menus out of 47 sales"><span class="bar__name">Colleague 6</span><span class="bar__track"><i></i></span><span class="bar__val">14.9%</span></li>
+        </ol>
+        <p class="chart__note">Share of menus in total sales · * not competing</p>
+      </figure>
+            </div>
             <p><strong>CGR Colmar.</strong> I rank first in two of the three categories: menu sales rate and average basket. This student job helps me develop my skills in customer relations, advice, upselling and customer satisfaction.</p>
             <p><strong>Menu sales challenge.</strong> From 22 to 24 March, a contest was held between the cinema's sales staff. I finished first with a 38.1% menu sales rate, ahead of the whole team, manager included.</p>
             <blockquote class="lb__quote">
@@ -431,6 +501,7 @@
             </blockquote>
             <p><strong>Maisons du Monde.</strong> As a summer sales associate, I strengthened my skills in customer advice, product merchandising and sales techniques in a demanding environment.</p>
             <p><strong>Conforama.</strong> In my best week as an intern, I generated more than €10,000 in revenue, meeting and even exceeding my targets.</p>
+            <p class="lb__sub">The original tables</p>
             <div class="lb__gallery lb__gallery--3">
               <img src="assets/img/vente-cgr-kpi.webp" alt="CGR sales indicator ranking" loading="lazy" />
               <img src="assets/img/vente-cgr-menus.webp" alt="CGR menu sales results" loading="lazy" />
@@ -444,7 +515,7 @@
     <!-- ═════════════ PASSIONS ═════════════ -->
     <section class="section" id="passions">
       <div class="section__head">
-        <span class="section__index">05</span>
+        <span class="section__index">06</span>
         <h2 class="section__label">About me</h2>
       </div>
       <h3 class="display reveal" data-words>What keeps me <em>moving forward.</em></h3>
@@ -488,7 +559,7 @@
     <section class="section contact" id="contact">
       <div class="contact__glow" aria-hidden="true"></div>
       <div class="section__head">
-        <span class="section__index">06</span>
+        <span class="section__index">07</span>
         <h2 class="section__label">Contact</h2>
       </div>
       <h3 class="contact__title reveal" data-words>Let's talk about your <em>next project.</em></h3>

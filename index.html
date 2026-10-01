@@ -157,6 +157,7 @@
       </div>
     </div>
 
+    <div class="band band--light">
     <!-- ═════════════ PARCOURS ═════════════ -->
     <section class="section" id="parcours">
       <div class="section__head">
@@ -190,10 +191,39 @@
       </div>
     </section>
 
+    <!-- ═════════════ OUTILS ═════════════ -->
+    <section class="section tools" id="outils">
+      <div class="section__head">
+        <span class="section__index">03</span>
+        <h2 class="section__label">Compétences & outils</h2>
+      </div>
+      <h3 class="display reveal" data-words>Mes compétences, <em>mes outils.</em></h3>
+      <div class="skillsets">
+        <article class="card skillset reveal">
+          <h4>Commerce &amp; relation client</h4>
+          <ul class="tags"><li>Vente et conseil client</li><li>Prospection commerciale</li><li>Négociation</li><li>Fidélisation</li><li>Argumentation commerciale</li><li>Vente additionnelle</li></ul>
+        </article>
+        <article class="card skillset reveal">
+          <h4>Marketing &amp; communication</h4>
+          <ul class="tags"><li>Création de supports commerciaux</li><li>Communication digitale</li><li>Réseaux sociaux</li><li>Création de contenus</li><li>Meta Ads</li><li>Analyse de marché</li></ul>
+        </article>
+      </div>
+      <p class="tools__head reveal">Les outils que j'utilise</p>
+      <ul class="toolbox">
+          <li class="tool reveal" style="transition-delay:0ms"><span class="tool__icon tool__icon--canva">C</span><b>Canva</b><small>Affiches, posts, catalogues</small></li>
+          <li class="tool reveal" style="transition-delay:60ms"><span class="tool__icon tool__icon--meta">∞</span><b>Meta Ads</b><small>Campagnes publicitaires</small></li>
+          <li class="tool reveal" style="transition-delay:120ms"><span class="tool__icon tool__icon--capcut"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></span><b>CapCut</b><small>Montage vidéo</small></li>
+          <li class="tool reveal" style="transition-delay:180ms"><span class="tool__icon tool__icon--word">W</span><b>Word</b><small>Documents commerciaux</small></li>
+          <li class="tool reveal" style="transition-delay:240ms"><span class="tool__icon tool__icon--ppt">P</span><b>PowerPoint</b><small>Présentations</small></li>
+          <li class="tool reveal" style="transition-delay:300ms"><span class="tool__icon tool__icon--forms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 7h9M8 12h9M8 17h6"/><circle cx="4.5" cy="7" r=".6" fill="currentColor"/><circle cx="4.5" cy="12" r=".6" fill="currentColor"/><circle cx="4.5" cy="17" r=".6" fill="currentColor"/></svg></span><b>Google Forms</b><small>Questionnaires &amp; études</small></li>
+      </ul>
+    </section>
+    </div>
+
     <!-- ═════════════ EXPÉRIENCES ═════════════ -->
     <section class="section experience" id="experience">
       <div class="section__head">
-        <span class="section__index">03</span>
+        <span class="section__index">04</span>
         <h2 class="section__label">Expériences</h2>
       </div>
       <h3 class="display reveal" data-words>Sur le terrain, <em>des résultats mesurables.</em></h3>
@@ -265,7 +295,7 @@
     <!-- ═════════════ RÉALISATIONS ═════════════ -->
     <section class="section projects" id="realisations">
       <div class="section__head">
-        <span class="section__index">04</span>
+        <span class="section__index">05</span>
         <h2 class="section__label">Réalisations</h2>
       </div>
       <div class="projects__head">
@@ -282,8 +312,19 @@
       <div class="projects__grid">
         <!-- Meta Ads -->
         <article class="card project project--wide reveal" data-cat="digital" tabindex="0" data-tilt data-cursor="Voir">
-          <div class="project__media project__media--screen">
-            <img src="assets/img/mkt-meta-ads.webp" alt="Tableau de bord Meta Ads de la campagne Groupimmo" loading="lazy" />
+          <div class="project__media project__media--chart">
+            <div class="dash">
+              <div class="dash__head"><span class="dash__live"></span>Campagne Meta Ads · Groupimmo<small>5 jours · 2 publicités</small></div>
+              <div class="dash__kpis">
+                <div><b data-count="7204">0</b><span>Impressions</span></div>
+                <div><b data-count="4563">0</b><span>Personnes touchées</span></div>
+                <div class="is-key"><b data-count="6">0</b><span>Leads qualifiés</span></div>
+              </div>
+              <div class="dash__funnel">
+                <div class="fbar" style="--v:1"><span>Impressions</span><i></i></div>
+                <div class="fbar" style="--v:0.6334"><span>Couverture</span><i></i></div>
+              </div>
+            </div>
           </div>
           <div class="project__body">
             <div class="project__meta"><span>Marketing digital</span><span>2026</span></div>
@@ -405,8 +446,21 @@
 
         <!-- Performances vente -->
         <article class="card project project--wide reveal" data-cat="vente" tabindex="0" data-tilt data-cursor="Voir">
-          <div class="project__media project__media--soft">
-            <img src="assets/img/vente-cgr-kpi.webp" alt="Tableau des performances de vente au CGR" loading="lazy" />
+          <div class="project__media project__media--chart">
+      <figure class="chart" aria-label="Classement du challenge de vente de menus">
+        <figcaption class="chart__title">Challenge de vente de menus · CGR · 22–24 mars</figcaption>
+        <ol class="bars">
+          <li class="bar is-me" style="--v:0.9525" tabindex="0" data-tip="37 menus sur 97 ventes"><span class="bar__name">Moi</span><span class="bar__track"><i></i></span><span class="bar__val">38,1 %</span></li>
+          <li class="bar" style="--v:0.8175" tabindex="0" data-tip="17 menus sur 52 ventes"><span class="bar__name">Manager*</span><span class="bar__track"><i></i></span><span class="bar__val">32,7 %</span></li>
+          <li class="bar" style="--v:0.7825" tabindex="0" data-tip="56 menus sur 179 ventes"><span class="bar__name">Collègue 1</span><span class="bar__track"><i></i></span><span class="bar__val">31,3 %</span></li>
+          <li class="bar" style="--v:0.6625" tabindex="0" data-tip="13 menus sur 49 ventes"><span class="bar__name">Collègue 2</span><span class="bar__track"><i></i></span><span class="bar__val">26,5 %</span></li>
+          <li class="bar" style="--v:0.6000" tabindex="0" data-tip="25 menus sur 104 ventes"><span class="bar__name">Collègue 3</span><span class="bar__track"><i></i></span><span class="bar__val">24 %</span></li>
+          <li class="bar" style="--v:0.4900" tabindex="0" data-tip="10 menus sur 51 ventes"><span class="bar__name">Collègue 4</span><span class="bar__track"><i></i></span><span class="bar__val">19,6 %</span></li>
+          <li class="bar" style="--v:0.4250" tabindex="0" data-tip="69 menus sur 406 ventes"><span class="bar__name">Collègue 5</span><span class="bar__track"><i></i></span><span class="bar__val">17 %</span></li>
+          <li class="bar" style="--v:0.3725" tabindex="0" data-tip="7 menus sur 47 ventes"><span class="bar__name">Collègue 6</span><span class="bar__track"><i></i></span><span class="bar__val">14,9 %</span></li>
+        </ol>
+        <p class="chart__note">Part des menus dans les ventes · * hors concours</p>
+      </figure>
           </div>
           <div class="project__body">
             <div class="project__meta"><span>Vente · Performances</span><span>2025 — 2026</span></div>
@@ -423,6 +477,22 @@
               <div><b>38,1 %</b><span>challenge menus · 1<sup>er</sup></span></div>
               <div><b>10 000 €+</b><span>CA en une semaine</span></div>
             </div>
+            <div class="lb__chart">
+      <figure class="chart" aria-label="Classement du challenge de vente de menus">
+        <figcaption class="chart__title">Challenge de vente de menus · CGR · 22–24 mars</figcaption>
+        <ol class="bars">
+          <li class="bar is-me" style="--v:0.9525" tabindex="0" data-tip="37 menus sur 97 ventes"><span class="bar__name">Moi</span><span class="bar__track"><i></i></span><span class="bar__val">38,1 %</span></li>
+          <li class="bar" style="--v:0.8175" tabindex="0" data-tip="17 menus sur 52 ventes"><span class="bar__name">Manager*</span><span class="bar__track"><i></i></span><span class="bar__val">32,7 %</span></li>
+          <li class="bar" style="--v:0.7825" tabindex="0" data-tip="56 menus sur 179 ventes"><span class="bar__name">Collègue 1</span><span class="bar__track"><i></i></span><span class="bar__val">31,3 %</span></li>
+          <li class="bar" style="--v:0.6625" tabindex="0" data-tip="13 menus sur 49 ventes"><span class="bar__name">Collègue 2</span><span class="bar__track"><i></i></span><span class="bar__val">26,5 %</span></li>
+          <li class="bar" style="--v:0.6000" tabindex="0" data-tip="25 menus sur 104 ventes"><span class="bar__name">Collègue 3</span><span class="bar__track"><i></i></span><span class="bar__val">24 %</span></li>
+          <li class="bar" style="--v:0.4900" tabindex="0" data-tip="10 menus sur 51 ventes"><span class="bar__name">Collègue 4</span><span class="bar__track"><i></i></span><span class="bar__val">19,6 %</span></li>
+          <li class="bar" style="--v:0.4250" tabindex="0" data-tip="69 menus sur 406 ventes"><span class="bar__name">Collègue 5</span><span class="bar__track"><i></i></span><span class="bar__val">17 %</span></li>
+          <li class="bar" style="--v:0.3725" tabindex="0" data-tip="7 menus sur 47 ventes"><span class="bar__name">Collègue 6</span><span class="bar__track"><i></i></span><span class="bar__val">14,9 %</span></li>
+        </ol>
+        <p class="chart__note">Part des menus dans les ventes · * hors concours</p>
+      </figure>
+            </div>
             <p><strong>CGR Colmar.</strong> Je me classe numéro 1 dans deux des trois catégories&nbsp;: le taux de vente de menus et le panier moyen. Ce job étudiant me permet de développer mes compétences en relation client, en conseil, en vente additionnelle et en satisfaction client.</p>
             <p><strong>Challenge de vente de menus.</strong> Du 22 au 24 mars, un concours a été organisé entre les vendeurs du cinéma. J'ai terminé premier avec 38,1 % de taux de vente de menus, devant l'ensemble de l'équipe, manager compris.</p>
             <blockquote class="lb__quote">
@@ -431,6 +501,7 @@
             </blockquote>
             <p><strong>Maisons du Monde.</strong> Vendeur durant la période estivale, j'ai renforcé mes compétences en conseil client, en mise en valeur des produits et en techniques de vente dans un environnement exigeant.</p>
             <p><strong>Conforama.</strong> Lors de ma meilleure semaine de stage, j'ai réalisé plus de 10 000 € de chiffre d'affaires, en atteignant, voire dépassant, les objectifs fixés.</p>
+            <p class="lb__sub">Les tableaux d'origine</p>
             <div class="lb__gallery lb__gallery--3">
               <img src="assets/img/vente-cgr-kpi.webp" alt="Classement des indicateurs de vente au CGR" loading="lazy" />
               <img src="assets/img/vente-cgr-menus.webp" alt="Résultats des ventes de menus au CGR" loading="lazy" />
@@ -444,7 +515,7 @@
     <!-- ═════════════ PASSIONS ═════════════ -->
     <section class="section" id="passions">
       <div class="section__head">
-        <span class="section__index">05</span>
+        <span class="section__index">06</span>
         <h2 class="section__label">À propos de moi</h2>
       </div>
       <h3 class="display reveal" data-words>Ce qui me fait <em>avancer.</em></h3>
@@ -488,7 +559,7 @@
     <section class="section contact" id="contact">
       <div class="contact__glow" aria-hidden="true"></div>
       <div class="section__head">
-        <span class="section__index">06</span>
+        <span class="section__index">07</span>
         <h2 class="section__label">Contact</h2>
       </div>
       <h3 class="contact__title reveal" data-words>Parlons de votre <em>prochain projet.</em></h3>

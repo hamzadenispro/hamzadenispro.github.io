@@ -9,4 +9,4 @@ Site statique (HTML / CSS / JS, sans dépendance ni build).
 
 Pour le voir en local : ouvrir `index.html` dans un navigateur, ou `python3 -m http.server`.
 
-Mise en ligne gratuite possible avec GitHub Pages (Settings → Pages → branche `main`, dossier `/`).
+En ligne sur **https://hamzadenispro.github.io** (GitHub Pages, branche `main`).

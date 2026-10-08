@@ -291,7 +291,7 @@ body.is-ready .hero__cta { transition-delay: 1.1s; }
   border: 1px solid var(--line);
   display: grid; place-items: center;
 }
-.portrait__inner img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; filter: saturate(0.92) contrast(1.03); }
+.portrait__inner img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: saturate(0.95) contrast(1.02); }
 .portrait__inner::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, transparent 55%, rgba(5, 11, 26, 0.55)), linear-gradient(200deg, rgba(61, 107, 255, 0.18), transparent 40%);

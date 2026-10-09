@@ -168,7 +168,51 @@ body.is-ready .nav { transform: translate(-50%, 0); }
   padding: 140px var(--gutter) 120px;
   overflow: hidden;
 }
-.hero__canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero__dust { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+/* Light beams falling from a source above the hero */
+.hero__beams {
+  --bx: 68%; --tilt: 0deg;
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  -webkit-mask: linear-gradient(180deg, #000 35%, transparent 92%);
+          mask: linear-gradient(180deg, #000 35%, transparent 92%);
+}
+.beams__cone {
+  position: absolute; left: var(--bx); top: -6%; width: 0; height: 125%;
+  transform: rotate(calc(16deg + var(--tilt))); transform-origin: 50% 0;
+  transition: transform 1.6s var(--ease);
+}
+.beams__cone i {
+  position: absolute; left: 50%; top: 0; height: 100%;
+  width: var(--w, 260px); margin-left: calc(var(--w, 260px) / -2);
+  transform-origin: 50% 0; transform: rotate(var(--r, 0deg));
+  filter: blur(var(--b, 18px));
+  opacity: 0; animation: beamIn 2.4s var(--ease) forwards, sway var(--d, 9s) ease-in-out infinite alternate;
+  animation-delay: var(--delay, 0.6s), var(--delay, 0.6s);
+}
+.beams__cone i:nth-child(1) { --r: -14deg; --w: 220px; --a: .38; --d: 11s; --delay: .5s; }
+.beams__cone i:nth-child(2) { --r: -6deg;  --w: 140px; --a: .52; --d: 8s;  --delay: .7s; --b: 22px; }
+.beams__cone i:nth-child(3) { --r: 2deg;   --w: 300px; --a: .32; --d: 13s; --delay: .9s; --b: 26px; }
+.beams__cone i:nth-child(4) { --r: 9deg;   --w: 110px; --a: .58; --d: 7s;  --delay: 1.1s; --b: 10px; }
+.beams__cone i:nth-child(5) { --r: 17deg;  --w: 240px; --a: .3;  --d: 12s; --delay: 1.2s; }
+.beams__cone i:nth-child(6) { --r: -22deg; --w: 180px; --a: .24; --d: 10s; --delay: 1.3s; --b: 22px; }
+.beams__cone i::before {
+  content: ""; position: absolute; inset: 0;
+  clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%);
+  background: linear-gradient(180deg, rgba(200, 222, 255, var(--a, 0.32)), rgba(111, 149, 255, calc(var(--a, 0.32) * 0.5)) 40%, transparent 85%);
+}
+@keyframes beamIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes sway {
+  0%   { transform: rotate(calc(var(--r) - 2.5deg)); filter: blur(var(--b, 18px)) brightness(0.8); }
+  100% { transform: rotate(calc(var(--r) + 2.5deg)); filter: blur(var(--b, 18px)) brightness(1.2); }
+}
+.beams__source {
+  position: absolute; left: var(--bx); top: -150px; width: 340px; height: 260px; transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(225, 236, 255, 0.85), rgba(111, 149, 255, 0.35) 45%, transparent);
+  filter: blur(18px); animation: flicker 6s ease-in-out infinite;
+}
+@keyframes flicker { 50% { opacity: 0.75; } }
+@media (max-width: 900px) { .hero__beams { --bx: 72%; } .beams__cone i { --w: 160px; } }
 .hero__aurora { position: absolute; inset: 0; pointer-events: none; filter: blur(80px); opacity: 0.75; }
 .hero__aurora i { position: absolute; border-radius: 50%; mix-blend-mode: screen; }
 .hero__aurora i:nth-child(1) {

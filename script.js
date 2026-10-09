@@ -424,12 +424,23 @@
     });
   }
 
-  /* ───────────── Hero constellation ───────────── */
-  const canvas = $(".hero__canvas");
-  const ctx = canvas.getContext("2d");
+  /* ───────────── Hero light beams + dust ───────────── */
   const hero = $(".hero");
-  let W = 0, H = 0, pts = [], visible = true;
-  const mouse = { x: -9999, y: -9999 };
+  const beams = $(".hero__beams");
+  const canvas = $(".hero__dust");
+  const ctx = canvas.getContext("2d");
+  let W = 0, H = 0, motes = [], visible = true;
+
+  // The beams lean gently towards the pointer
+  if (finePointer && !reduceMotion) {
+    hero.addEventListener("pointermove", (e) => {
+      const r = hero.getBoundingClientRect();
+      const k = (e.clientX - r.left) / r.width - 0.64;
+      beams.style.setProperty("--tilt", `${(-k * 10).toFixed(2)}deg`);
+    });
+    hero.addEventListener("pointerleave", () => beams.style.setProperty("--tilt", "0deg"));
+  }
+  new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(hero);
 
   const resize = () => {
     const dpr = Math.min(devicePixelRatio || 1, 2);
@@ -438,65 +449,39 @@
     canvas.width = W * dpr;
     canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const n = Math.round(Math.min(110, (W * H) / 14000));
-    pts = Array.from({ length: n }, () => ({
+    const n = Math.round(Math.min(90, (W * H) / 16000));
+    motes = Array.from({ length: n }, () => ({
       x: Math.random() * W,
       y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-      r: Math.random() * 1.4 + 0.4,
+      vx: (Math.random() - 0.5) * 0.15,
+      vy: Math.random() * 0.18 + 0.04,
+      r: Math.random() * 1.8 + 0.6,
+      p: Math.random() * Math.PI * 2,
     }));
   };
-  hero.addEventListener("pointermove", (e) => {
-    const r = hero.getBoundingClientRect();
-    mouse.x = e.clientX - r.left;
-    mouse.y = e.clientY - r.top;
-  });
-  hero.addEventListener("pointerleave", () => (mouse.x = mouse.y = -9999));
-  new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(hero);
 
-  const LINK = 130;
-  const draw = () => {
+  // Dust only shows where the light falls: inside the cone below the source
+  const inLight = (x, y) => {
+    const sx = W * (W < 900 ? 0.72 : 0.68), sy = -H * 0.06;
+    const ang = (Math.atan2(x - sx, y - sy) * 180) / Math.PI; // 0 = straight down
+    const off = Math.abs(ang + 16);
+    return Math.max(0, 1 - off / 30) * Math.max(0, 1 - (y - sy) / (H * 1.1));
+  };
+
+  const draw = (t) => {
     if (visible) {
       ctx.clearRect(0, 0, W, H);
-      for (const p of pts) {
-        const dx = mouse.x - p.x, dy = mouse.y - p.y, d = Math.hypot(dx, dy);
-        if (d < 200 && d > 0) {
-          p.vx += (dx / d) * 0.012;
-          p.vy += (dy / d) * 0.012;
-        }
-        p.vx *= 0.99;
-        p.vy *= 0.99;
-        p.x += p.vx + (Math.random() - 0.5) * 0.05;
-        p.y += p.vy + (Math.random() - 0.5) * 0.05;
-        if (p.x < 0 || p.x > W) p.vx *= -1;
-        if (p.y < 0 || p.y > H) p.vy *= -1;
-      }
-      ctx.lineWidth = 0.6;
-      for (let i = 0; i < pts.length; i++) {
-        const a = pts[i];
-        for (let j = i + 1; j < pts.length; j++) {
-          const b = pts[j];
-          const d = Math.hypot(a.x - b.x, a.y - b.y);
-          if (d < LINK) {
-            ctx.strokeStyle = `rgba(156,195,255,${(1 - d / LINK) * 0.22})`;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-          }
-        }
-        const md = Math.hypot(a.x - mouse.x, a.y - mouse.y);
-        if (md < 180) {
-          ctx.strokeStyle = `rgba(230,198,135,${(1 - md / 180) * 0.35})`;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(mouse.x, mouse.y);
-          ctx.stroke();
-        }
-        ctx.fillStyle = "rgba(210,226,255,0.8)";
+      for (const m of motes) {
+        m.x += m.vx + Math.sin(t / 2400 + m.p) * 0.08;
+        m.y += m.vy;
+        if (m.y > H + 5) { m.y = -5; m.x = Math.random() * W; }
+        if (m.x < -5) m.x = W + 5;
+        if (m.x > W + 5) m.x = -5;
+        const a = Math.min(1, inLight(m.x, m.y) * 1.4) * (0.6 + 0.4 * Math.sin(t / 700 + m.p));
+        if (a <= 0.02) continue;
+        ctx.fillStyle = `rgba(225,236,255,${a.toFixed(3)})`;
         ctx.beginPath();
-        ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
+        ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
         ctx.fill();
       }
     }
@@ -507,5 +492,5 @@
     clearTimeout(resize.t);
     resize.t = setTimeout(resize, 150);
   });
-  draw();
+  requestAnimationFrame(draw);
 })();

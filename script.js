@@ -307,6 +307,24 @@
     })
   );
 
+  /* ───────────── Video CV ───────────── */
+  const vframe = $("[data-video]");
+  if (vframe) {
+    const video = $("video", vframe);
+    const play = () => {
+      vframe.classList.add("is-playing");
+      video.controls = true;
+      video.play().catch(() => vframe.classList.remove("is-playing"));
+    };
+    $(".videocv__play", vframe).addEventListener("click", play);
+    video.addEventListener("play", () => vframe.classList.add("is-playing"));
+    video.addEventListener("ended", () => vframe.classList.remove("is-playing"));
+    // The hero button scrolls to the player, then starts it
+    $$("[data-play-video]").forEach((btn) =>
+      btn.addEventListener("click", () => setTimeout(play, lenis ? 1400 : 600))
+    );
+  }
+
   /* ───────────── Project filters ───────────── */
   const filters = $$(".filter");
   const projects = $$(".project");

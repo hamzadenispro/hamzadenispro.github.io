@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=202610091406" />
+  <link rel="stylesheet" href="styles.css?v=202610092241" />
 </head>
 <body class="is-loading">
   <div class="loader" aria-hidden="true">
@@ -83,6 +83,7 @@
         <div class="hero__cta reveal-up">
           <a href="#realisations" class="btn" data-magnetic>Voir mes réalisations <span class="arrow">→</span></a>
           <a href="#contact" class="btn btn--ghost" data-magnetic>Me contacter</a>
+          <a href="#video" class="btn btn--ghost btn--video" data-magnetic data-play-video><span class="btn__dot"></span>CV vidéo · 1 min</a>
         </div>
       </div>
       <a href="#realisations" class="badge" aria-label="Voir les réalisations" data-magnetic>
@@ -147,6 +148,24 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ═════════════ CV VIDÉO ═════════════ -->
+    <section class="videocv" id="video" aria-label="CV vidéo de Hamza Denis">
+      <div class="videocv__text reveal">
+        <span class="videocv__kicker"><i></i>CV vidéo</span>
+        <h3 class="videocv__title">Mon parcours <em>en 1 minute.</em></h3>
+        <p class="videocv__lead">Expériences, compétences, outils, langues&nbsp;: l'essentiel de mon profil en une courte vidéo animée.</p>
+      </div>
+      <div class="videocv__frame reveal" data-video>
+        <video preload="none" playsinline poster="assets/video/cv-video-poster.webp">
+          <source src="assets/video/cv-video.mp4" type="video/mp4" />
+        </video>
+        <button class="videocv__play" type="button" aria-label="Lancer la vidéo">
+          <span class="videocv__btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+          <span class="videocv__meta">Lancer la vidéo<small>1 min · avec son</small></span>
+        </button>
       </div>
     </section>
 
@@ -599,6 +618,6 @@
   <div class="toast" role="status" aria-live="polite"></div>
 
   <script src="assets/vendor/lenis.min.js" defer></script>
-  <script src="script.js?v=202610091406" defer></script>
+  <script src="script.js?v=202610092241" defer></script>
 </body>
 </html>

@@ -424,21 +424,21 @@
     });
   }
 
-  /* ───────────── Hero light beams + dust ───────────── */
+  /* ───────────── Hero starfield ───────────── */
   const hero = $(".hero");
-  const beams = $(".hero__beams");
-  const canvas = $(".hero__dust");
+  const canvas = $(".hero__stars");
   const ctx = canvas.getContext("2d");
-  let W = 0, H = 0, motes = [], visible = true;
+  let W = 0, H = 0, stars = [], meteors = [], visible = true, nextMeteor = 0;
+  const pointer = { x: 0, y: 0, tx: 0, ty: 0 };
 
-  // The beams lean gently towards the pointer
+  // Stars drift slightly with the pointer: near ones (bigger) move more than far ones
   if (finePointer && !reduceMotion) {
     hero.addEventListener("pointermove", (e) => {
       const r = hero.getBoundingClientRect();
-      const k = (e.clientX - r.left) / r.width - 0.64;
-      beams.style.setProperty("--tilt", `${(-k * 10).toFixed(2)}deg`);
+      pointer.tx = (e.clientX - r.left) / r.width - 0.5;
+      pointer.ty = (e.clientY - r.top) / r.height - 0.5;
     });
-    hero.addEventListener("pointerleave", () => beams.style.setProperty("--tilt", "0deg"));
+    hero.addEventListener("pointerleave", () => (pointer.tx = pointer.ty = 0));
   }
   new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(hero);
 
@@ -449,40 +449,75 @@
     canvas.width = W * dpr;
     canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const n = Math.round(Math.min(90, (W * H) / 16000));
-    motes = Array.from({ length: n }, () => ({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.15,
-      vy: Math.random() * 0.18 + 0.04,
-      r: Math.random() * 1.8 + 0.6,
-      p: Math.random() * Math.PI * 2,
-    }));
+    const n = Math.round(Math.min(380, (W * H) / 3600));
+    stars = Array.from({ length: n }, () => {
+      const z = Math.random(); // depth: 0 far, 1 near
+      return {
+        x: Math.random() * W,
+        y: Math.random() * H,
+        z,
+        r: 0.35 + z * z * 1.7,
+        base: 0.4 + Math.random() * 0.6,
+        tw: 0.6 + Math.random() * 2.2, // twinkle speed
+        p: Math.random() * Math.PI * 2,
+        hue: Math.random() < 0.12 ? "255,232,200" : Math.random() < 0.3 ? "190,212,255" : "235,242,255",
+      };
+    });
   };
 
-  // Dust only shows where the light falls: inside the cone below the source
-  const inLight = (x, y) => {
-    const sx = W * (W < 900 ? 0.72 : 0.68), sy = -H * 0.06;
-    const ang = (Math.atan2(x - sx, y - sy) * 180) / Math.PI; // 0 = straight down
-    const off = Math.abs(ang + 16);
-    return Math.max(0, 1 - off / 30) * Math.max(0, 1 - (y - sy) / (H * 1.1));
+  const spawnMeteor = (t) => {
+    const fromTop = Math.random() < 0.6;
+    meteors.push({
+      x: fromTop ? W * (0.35 + Math.random() * 0.6) : W + 20,
+      y: fromTop ? -20 : H * Math.random() * 0.4,
+      vx: -(6 + Math.random() * 4),
+      vy: 2.4 + Math.random() * 2,
+      life: 0,
+      max: 60 + Math.random() * 40,
+    });
+    nextMeteor = t + 2500 + Math.random() * 4500;
   };
 
   const draw = (t) => {
     if (visible) {
       ctx.clearRect(0, 0, W, H);
-      for (const m of motes) {
-        m.x += m.vx + Math.sin(t / 2400 + m.p) * 0.08;
-        m.y += m.vy;
-        if (m.y > H + 5) { m.y = -5; m.x = Math.random() * W; }
-        if (m.x < -5) m.x = W + 5;
-        if (m.x > W + 5) m.x = -5;
-        const a = Math.min(1, inLight(m.x, m.y) * 1.4) * (0.6 + 0.4 * Math.sin(t / 700 + m.p));
-        if (a <= 0.02) continue;
-        ctx.fillStyle = `rgba(225,236,255,${a.toFixed(3)})`;
+      pointer.x += (pointer.tx - pointer.x) * 0.04;
+      pointer.y += (pointer.ty - pointer.y) * 0.04;
+      for (const s of stars) {
+        const a = Math.min(1, s.base * (0.7 + 0.3 * Math.sin((t / 1000) * s.tw + s.p)));
+        const x = s.x - pointer.x * 40 * s.z;
+        const y = s.y - pointer.y * 30 * s.z;
+        ctx.fillStyle = `rgba(${s.hue},${a.toFixed(3)})`;
         ctx.beginPath();
-        ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
+        ctx.arc(x, y, s.r, 0, Math.PI * 2);
         ctx.fill();
+        if (s.r > 1.4 && a > 0.6) {
+          // soft glow on the brightest stars
+          ctx.fillStyle = `rgba(${s.hue},${(a * 0.12).toFixed(3)})`;
+          ctx.beginPath();
+          ctx.arc(x, y, s.r * 4, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+      if (!reduceMotion && t > nextMeteor) spawnMeteor(t);
+      meteors = meteors.filter((m) => m.life < m.max);
+      for (const m of meteors) {
+        m.life++;
+        m.x += m.vx;
+        m.y += m.vy;
+        const k = m.life / m.max;
+        const alpha = k < 0.2 ? k / 0.2 : 1 - (k - 0.2) / 0.8;
+        const tail = 14;
+        const g = ctx.createLinearGradient(m.x, m.y, m.x - m.vx * tail, m.y - m.vy * tail);
+        g.addColorStop(0, `rgba(255,255,255,${(alpha * 0.95).toFixed(3)})`);
+        g.addColorStop(1, "rgba(156,195,255,0)");
+        ctx.strokeStyle = g;
+        ctx.lineWidth = 1.6;
+        ctx.lineCap = "round";
+        ctx.beginPath();
+        ctx.moveTo(m.x, m.y);
+        ctx.lineTo(m.x - m.vx * tail, m.y - m.vy * tail);
+        ctx.stroke();
       }
     }
     if (!reduceMotion) requestAnimationFrame(draw);
@@ -492,5 +527,6 @@
     clearTimeout(resize.t);
     resize.t = setTimeout(resize, 150);
   });
+  nextMeteor = performance.now() + 1800;
   requestAnimationFrame(draw);
 })();

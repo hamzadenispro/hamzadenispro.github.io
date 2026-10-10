@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=202610092241" />
+  <link rel="stylesheet" href="styles.css?v=202610100816" />
 </head>
 <body class="is-loading">
   <div class="loader" aria-hidden="true">
@@ -572,6 +572,41 @@
           </div>
         </article>
       </div>
+      <div class="photo reveal">
+        <div class="photo__text">
+          <span class="passion__tag">Photography</span>
+          <h4 class="photo__title">A photographer's <em>eye.</em></h4>
+          <p>I love capturing beautiful landscapes, on my travels and close to home. Composing a shot, waiting for the right light, finding the right frame: an eye I also bring to my marketing visuals.</p>
+          <button class="btn btn--ghost photo__open" type="button" data-shot="0">Open the gallery <span class="arrow">→</span></button>
+          <small class="photo__count">6 photos · taken by me</small>
+        </div>
+        <div class="photo__strip">
+          <button class="shot" type="button" data-shot="0" data-cursor="View" style="--d:0ms">
+            <img src="assets/img/photos/novalja-thumb.webp" alt="Sunset over the bay in Novalja" loading="lazy" />
+            <span class="shot__place">Novalja, Croatia</span>
+          </button>
+          <button class="shot" type="button" data-shot="1" data-cursor="View" style="--d:70ms">
+            <img src="assets/img/photos/paris-thumb.webp" alt="Paris at blue hour, with the Eiffel Tower" loading="lazy" />
+            <span class="shot__place">Paris, France</span>
+          </button>
+          <button class="shot" type="button" data-shot="2" data-cursor="View" style="--d:140ms">
+            <img src="assets/img/photos/francfort-thumb.webp" alt="Frankfurt skyline at night" loading="lazy" />
+            <span class="shot__place">Frankfurt, Germany</span>
+          </button>
+          <button class="shot" type="button" data-shot="3" data-cursor="View" style="--d:210ms">
+            <img src="assets/img/photos/lac-blanc-thumb.webp" alt="Lac Blanc under snow in winter" loading="lazy" />
+            <span class="shot__place">Lac Blanc, Alsace</span>
+          </button>
+          <button class="shot" type="button" data-shot="4" data-cursor="View" style="--d:280ms">
+            <img src="assets/img/photos/venise-thumb.webp" alt="The Grand Canal in Venice" loading="lazy" />
+            <span class="shot__place">Venice, Italy</span>
+          </button>
+          <button class="shot" type="button" data-shot="5" data-cursor="View" style="--d:350ms">
+            <img src="assets/img/photos/kosovo-thumb.webp" alt="Green hills in Kosovo" loading="lazy" />
+            <span class="shot__place">Kosovo</span>
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- ═════════════ CONTACT ═════════════ -->
@@ -615,9 +650,21 @@
     </div>
   </div>
 
+  <!-- Photo gallery -->
+  <div class="gallery" role="dialog" aria-modal="true" aria-label="Photo gallery" hidden data-lenis-prevent>
+    <ul class="gallery__data" hidden><li data-src="assets/img/photos/novalja.webp" data-place="Novalja, Croatia" data-alt="Sunset over the bay in Novalja"></li><li data-src="assets/img/photos/paris.webp" data-place="Paris, France" data-alt="Paris at blue hour, with the Eiffel Tower"></li><li data-src="assets/img/photos/francfort.webp" data-place="Frankfurt, Germany" data-alt="Frankfurt skyline at night"></li><li data-src="assets/img/photos/lac-blanc.webp" data-place="Lac Blanc, Alsace" data-alt="Lac Blanc under snow in winter"></li><li data-src="assets/img/photos/venise.webp" data-place="Venice, Italy" data-alt="The Grand Canal in Venice"></li><li data-src="assets/img/photos/kosovo.webp" data-place="Kosovo" data-alt="Green hills in Kosovo"></li></ul>
+    <button class="gallery__close" type="button" aria-label="Close gallery">✕</button>
+    <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Previous photo">←</button>
+    <figure class="gallery__stage">
+      <img class="gallery__img" alt="" />
+      <figcaption><span class="gallery__place"></span><span class="gallery__count"></span></figcaption>
+    </figure>
+    <button class="gallery__nav gallery__nav--next" type="button" aria-label="Next photo">→</button>
+  </div>
+
   <div class="toast" role="status" aria-live="polite"></div>
 
   <script src="assets/vendor/lenis.min.js" defer></script>
-  <script src="script.js?v=202610092241" defer></script>
+  <script src="script.js?v=202610100816" defer></script>
 </body>
 </html>

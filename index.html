@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=202610092241" />
+  <link rel="stylesheet" href="styles.css?v=202610100816" />
 </head>
 <body class="is-loading">
   <div class="loader" aria-hidden="true">
@@ -572,6 +572,41 @@
           </div>
         </article>
       </div>
+      <div class="photo reveal">
+        <div class="photo__text">
+          <span class="passion__tag">Photographie</span>
+          <h4 class="photo__title">L'œil du <em>photographe.</em></h4>
+          <p>J'aime capturer les beaux paysages, en voyage comme près de chez moi. Composer une image, attendre la bonne lumière, trouver le bon cadre&nbsp;: un œil que je mets aussi au service de mes visuels marketing.</p>
+          <button class="btn btn--ghost photo__open" type="button" data-shot="0">Voir la galerie <span class="arrow">→</span></button>
+          <small class="photo__count">6 photos · prises par moi</small>
+        </div>
+        <div class="photo__strip">
+          <button class="shot" type="button" data-shot="0" data-cursor="Voir" style="--d:0ms">
+            <img src="assets/img/photos/novalja-thumb.webp" alt="Coucher de soleil sur la baie de Novalja" loading="lazy" />
+            <span class="shot__place">Novalja, Croatie</span>
+          </button>
+          <button class="shot" type="button" data-shot="1" data-cursor="Voir" style="--d:70ms">
+            <img src="assets/img/photos/paris-thumb.webp" alt="Paris à l'heure bleue, avec la tour Eiffel" loading="lazy" />
+            <span class="shot__place">Paris, France</span>
+          </button>
+          <button class="shot" type="button" data-shot="2" data-cursor="Voir" style="--d:140ms">
+            <img src="assets/img/photos/francfort-thumb.webp" alt="Francfort de nuit, vue sur les gratte-ciel" loading="lazy" />
+            <span class="shot__place">Francfort, Allemagne</span>
+          </button>
+          <button class="shot" type="button" data-shot="3" data-cursor="Voir" style="--d:210ms">
+            <img src="assets/img/photos/lac-blanc-thumb.webp" alt="Le Lac Blanc enneigé en hiver" loading="lazy" />
+            <span class="shot__place">Lac Blanc, Alsace</span>
+          </button>
+          <button class="shot" type="button" data-shot="4" data-cursor="Voir" style="--d:280ms">
+            <img src="assets/img/photos/venise-thumb.webp" alt="Le Grand Canal de Venise en plein soleil" loading="lazy" />
+            <span class="shot__place">Venise, Italie</span>
+          </button>
+          <button class="shot" type="button" data-shot="5" data-cursor="Voir" style="--d:350ms">
+            <img src="assets/img/photos/kosovo-thumb.webp" alt="Collines verdoyantes au Kosovo" loading="lazy" />
+            <span class="shot__place">Kosovo</span>
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- ═════════════ CONTACT ═════════════ -->
@@ -615,9 +650,21 @@
     </div>
   </div>
 
+  <!-- Photo gallery -->
+  <div class="gallery" role="dialog" aria-modal="true" aria-label="Galerie photo" hidden data-lenis-prevent>
+    <ul class="gallery__data" hidden><li data-src="assets/img/photos/novalja.webp" data-place="Novalja, Croatie" data-alt="Coucher de soleil sur la baie de Novalja"></li><li data-src="assets/img/photos/paris.webp" data-place="Paris, France" data-alt="Paris à l'heure bleue, avec la tour Eiffel"></li><li data-src="assets/img/photos/francfort.webp" data-place="Francfort, Allemagne" data-alt="Francfort de nuit, vue sur les gratte-ciel"></li><li data-src="assets/img/photos/lac-blanc.webp" data-place="Lac Blanc, Alsace" data-alt="Le Lac Blanc enneigé en hiver"></li><li data-src="assets/img/photos/venise.webp" data-place="Venise, Italie" data-alt="Le Grand Canal de Venise en plein soleil"></li><li data-src="assets/img/photos/kosovo.webp" data-place="Kosovo" data-alt="Collines verdoyantes au Kosovo"></li></ul>
+    <button class="gallery__close" type="button" aria-label="Fermer la galerie">✕</button>
+    <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Photo précédente">←</button>
+    <figure class="gallery__stage">
+      <img class="gallery__img" alt="" />
+      <figcaption><span class="gallery__place"></span><span class="gallery__count"></span></figcaption>
+    </figure>
+    <button class="gallery__nav gallery__nav--next" type="button" aria-label="Photo suivante">→</button>
+  </div>
+
   <div class="toast" role="status" aria-live="polite"></div>
 
   <script src="assets/vendor/lenis.min.js" defer></script>
-  <script src="script.js?v=202610092241" defer></script>
+  <script src="script.js?v=202610100816" defer></script>
 </body>
 </html>

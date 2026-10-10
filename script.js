@@ -325,6 +325,60 @@
     );
   }
 
+  /* ───────────── Photo gallery ───────────── */
+  const gallery = $(".gallery");
+  if (gallery) {
+    const shots = $$(".gallery__data li", gallery).map((li) => li.dataset);
+    const img = $(".gallery__img", gallery);
+    let idx = 0, opener = null;
+    const show = (i) => {
+      idx = (i + shots.length) % shots.length;
+      img.classList.add("is-changing");
+      const next = new Image();
+      next.onload = next.onerror = () => {
+        img.src = shots[idx].src;
+        img.alt = shots[idx].alt;
+        $(".gallery__place", gallery).textContent = shots[idx].place;
+        $(".gallery__count", gallery).textContent = `${idx + 1} / ${shots.length}`;
+        requestAnimationFrame(() => img.classList.remove("is-changing"));
+      };
+      next.src = shots[idx].src;
+    };
+    const open = (i, from) => {
+      opener = from;
+      gallery.hidden = false;
+      lockScroll(true);
+      show(i);
+      requestAnimationFrame(() => gallery.classList.add("is-open"));
+      $(".gallery__close", gallery).focus();
+    };
+    const close = () => {
+      gallery.classList.remove("is-open");
+      lockScroll(false);
+      setTimeout(() => (gallery.hidden = true), reduceMotion ? 0 : 400);
+      opener?.focus();
+    };
+    $$("[data-shot]").forEach((el) => el.addEventListener("click", () => open(+el.dataset.shot, el)));
+    $(".gallery__prev, .gallery__nav--prev", gallery).addEventListener("click", () => show(idx - 1));
+    $(".gallery__nav--next", gallery).addEventListener("click", () => show(idx + 1));
+    $(".gallery__close", gallery).addEventListener("click", close);
+    gallery.addEventListener("click", (e) => { if (e.target === gallery) close(); });
+    addEventListener("keydown", (e) => {
+      if (gallery.hidden) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") show(idx - 1);
+      if (e.key === "ArrowRight") show(idx + 1);
+    });
+    let sx = null;
+    gallery.addEventListener("touchstart", (e) => (sx = e.touches[0].clientX), { passive: true });
+    gallery.addEventListener("touchend", (e) => {
+      if (sx === null) return;
+      const dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+      sx = null;
+    });
+  }
+
   /* ───────────── Project filters ───────────── */
   const filters = $$(".filter");
   const projects = $$(".project");

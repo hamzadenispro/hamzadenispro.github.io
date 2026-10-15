@@ -1060,3 +1060,13 @@ body.is-ready .badge { opacity: 1; transform: none; }
   .gallery__stage { height: calc(100svh - 120px); }
   .gallery figcaption { flex-direction: column; align-items: center; gap: 4px; }
 }
+
+/* Projects grid: no stagger, aligned rows, compact wide cards */
+.projects__grid { align-items: stretch; }
+.projects__grid .project,
+.projects__grid .project:nth-child(odd):not(.project--wide),
+.projects__grid .project:nth-child(even) { margin-top: 0 !important; }
+.projects__grid .project:not(.project--wide) { display: flex; flex-direction: column; }
+.projects__grid .project:not(.project--wide) .project__body { flex: 1; display: flex; flex-direction: column; }
+.projects__grid .project:not(.project--wide) .tags { margin-top: auto; }
+.project--wide .project__media:not(.project__media--chart) { aspect-ratio: 16 / 10; }

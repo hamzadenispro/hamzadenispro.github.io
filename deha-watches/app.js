@@ -8,46 +8,46 @@ const PRODUCTS = [
   {
     id: "riviera-bleu",
     name: "Riviera Bleu",
-    tag: "Sport-chic · Bracelet acier",
+    tag: "Sport-chic",
     price: 189,
     old: 249,
     badge: "Best-seller",
     img: "images/riviera-bleu.webp",
     variant: "riviera",
-    color: "#1e3f7a",
-    short: "Cadran bleu dégradé strié, index luminescents, date à 3 h.",
-    desc: "Un bleu profond qui s'éclaircit vers le centre et change selon la lumière. Index luminescents, date à 3 h et bracelet acier intégré au boîtier : la plus remarquée de la collection.",
-    highlights: ["Cadran bleu dégradé strié", "Index luminescents", "Bracelet acier intégré"],
-    specs: { Boîtier: "Acier 316L, 41 mm", Cadran: "Bleu dégradé strié", Mouvement: "Automatique", Verre: "Anti-rayures", Bracelet: "Acier 316L intégré", Étanchéité: "5 ATM" },
+    color: "#1e3a6e",
+    short: "Cadran bleu nuit dégradé, strié horizontalement.",
+    desc: "Un bleu nuit qui s'éclaircit vers le centre et change selon la lumière. Index luminescents, date à 3 h et bracelet acier intégré au boîtier : la plus remarquée des trois.",
+    highlights: ["Cadran bleu nuit dégradé", "Index et aiguilles luminescents", "Bracelet acier intégré"],
+    specs: { Boîtier: "Acier 316L, 41 mm", Cadran: "Bleu nuit dégradé strié", Mouvement: "Automatique", Verre: "Saphir anti-rayures", Bracelet: "Acier 316L intégré", Étanchéité: "10 ATM (100 m)" },
   },
   {
     id: "riviera-blanc",
     name: "Riviera Blanc",
-    tag: "Sport-chic · Bracelet acier",
+    tag: "Sport-chic",
     price: 189,
     old: 249,
     img: "images/riviera-blanc.webp",
     variant: "riviera",
     color: "#ecebe7",
-    short: "Cadran blanc strié, boîtier coussin, date à 3 h.",
+    short: "Cadran blanc strié, discret et lumineux.",
     desc: "La discrétion comme signature. Son cadran blanc strié capte la lumière avec subtilité, et son boîtier coussin aux flancs polis se prolonge dans le bracelet en une seule ligne. Aussi juste au bureau que le week-end.",
     highlights: ["Cadran blanc strié horizontal", "Boîtier coussin poli et brossé", "Date à 3 h"],
-    specs: { Boîtier: "Acier 316L, 41 mm", Cadran: "Blanc strié", Mouvement: "Automatique", Verre: "Anti-rayures", Bracelet: "Acier 316L intégré", Étanchéité: "5 ATM" },
+    specs: { Boîtier: "Acier 316L, 41 mm", Cadran: "Blanc strié", Mouvement: "Automatique", Verre: "Saphir anti-rayures", Bracelet: "Acier 316L intégré", Étanchéité: "10 ATM (100 m)" },
   },
   {
     id: "riviera-noir",
     name: "Riviera Noir",
-    tag: "Sport · Bracelet caoutchouc",
-    price: 199,
-    old: 259,
+    tag: "Sport-chic",
+    price: 189,
+    old: 249,
     badge: "Nouveau",
     img: "images/riviera-noir.webp",
     variant: "riviera",
     color: "#151515",
-    short: "Cadran noir quadrillé, chiffres arabes, bracelet caoutchouc.",
-    desc: "La version la plus sportive. Cadran noir à motif quadrillé, grands chiffres arabes luminescents et bracelet caoutchouc souple : légère au poignet, elle se porte aussi bien en ville qu'en vacances.",
-    highlights: ["Cadran noir quadrillé", "Chiffres arabes luminescents", "Bracelet caoutchouc confortable"],
-    specs: { Boîtier: "Acier 316L, 41 mm", Cadran: "Noir quadrillé", Mouvement: "Automatique", Verre: "Anti-rayures", Bracelet: "Caoutchouc", Étanchéité: "5 ATM" },
+    short: "Cadran noir profond, contraste maximal.",
+    desc: "La plus affirmée des trois. Le cadran noir strié fait ressortir les index luminescents et l'acier poli du boîtier : une montre qui se lit d'un coup d'œil et s'accorde avec tout.",
+    highlights: ["Cadran noir strié", "Index luminescents très lisibles", "Bracelet acier intégré"],
+    specs: { Boîtier: "Acier 316L, 41 mm", Cadran: "Noir strié", Mouvement: "Automatique", Verre: "Saphir anti-rayures", Bracelet: "Acier 316L intégré", Étanchéité: "10 ATM (100 m)" },
   },
 ];
 
@@ -76,6 +76,7 @@ function renderCards() {
         <p class="card__tag">${p.tag}</p>
         <h3>${p.name}</h3>
         <p class="card__short">${p.short}</p>
+        <p class="card__specs">41 mm · Automatique · Saphir · 10 ATM</p>
         <div class="price">${priceHTML(p)}</div>
         <div class="card__actions">
           <button class="btn btn--dark" data-add="${p.id}">Ajouter au panier</button>
@@ -136,6 +137,7 @@ function openModal(id) {
   $("[data-modal-price]").innerHTML = priceHTML(p);
   $("[data-modal-desc]").textContent = p.desc;
   $("[data-modal-qty]").textContent = modalQty;
+  renderTimeline();
   $("[data-modal-specs]").innerHTML = Object.entries(p.specs).map(([k, v]) => `<li><span>${k}</span><span>${v}</span></li>`).join("");
   const siblings = p.variant ? PRODUCTS.filter((x) => x.variant === p.variant) : [];
   $("[data-modal-variants]").innerHTML = siblings.length > 1
@@ -148,6 +150,20 @@ function openModal(id) {
   document.body.classList.add("no-scroll");
   $("[data-modal-close]").focus();
 }
+// Frise de livraison : commandé aujourd'hui, expédié le jour ouvré suivant, livré 4 à 7 jours ouvrés après
+function addWorkdays(date, n) {
+  const d = new Date(date);
+  while (n > 0) { d.setDate(d.getDate() + 1); if (d.getDay() % 6) n--; }
+  return d;
+}
+function renderTimeline() {
+  const fmt = (d) => d.toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "short" });
+  const now = new Date();
+  const ship = addWorkdays(now, 1);
+  const steps = [["Commandée", fmt(now)], ["Expédiée", fmt(ship)], ["Livrée", `${fmt(addWorkdays(ship, 4))} – ${fmt(addWorkdays(ship, 7))}`]];
+  $("[data-modal-timeline]").innerHTML = steps.map(([t, d]) => `<li><strong>${t}</strong><span>${d}</span></li>`).join("");
+}
+
 function closeModal() {
   const modal = $(".modal");
   modal.classList.remove("is-open");

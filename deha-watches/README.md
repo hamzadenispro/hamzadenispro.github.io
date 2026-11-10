@@ -18,4 +18,4 @@ Les avis clients de `index.html` sont des exemples, à remplacer par de vrais av
 
 Voir le site en local : `python3 -m http.server` dans ce dossier, puis http://localhost:8000
 
-`NOTES-reference.md` : relevé du site mosawatches.fr (structure, prix, caractéristiques) qui a servi d'inspiration.
+`NOTES-felliwatches.md` et `NOTES-mosawatches.md` : relevés des sites concurrents (structure, prix, caractéristiques) qui ont servi d'inspiration. Les photos actuelles viennent de felliwatches.com.

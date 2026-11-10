@@ -6,46 +6,48 @@
  */
 const PRODUCTS = [
   {
-    id: "chrono-panda",
-    name: "Chrono Panda",
-    tag: "Chronographe sport",
-    price: 229,
-    old: 299,
+    id: "riviera-bleu",
+    name: "Riviera Bleu",
+    tag: "Sport-chic · Bracelet acier",
+    price: 189,
+    old: 249,
     badge: "Best-seller",
-    img: "images/chrono-panda.webp",
-    short: "Cadran blanc, compteurs noirs, lunette tachymètre noire.",
-    desc: "Le contraste qui ne passe jamais inaperçu. Cadran blanc laqué, trois compteurs noirs et lunette tachymètre : une montre sportive et élégante, aussi à l'aise sur un circuit qu'en soirée.",
-    highlights: ["Lunette tachymètre noire", "3 compteurs contrastés", "Bracelet acier trois rangs"],
-    specs: { Boîtier: "Acier 316L, 40 mm", Cadran: "Blanc, compteurs noirs", Lunette: "Tachymètre noire", Verre: "Anti-rayures", Bracelet: "Acier 316L, fermoir déployant", Étanchéité: "5 ATM" },
+    img: "images/riviera-bleu.webp",
+    variant: "riviera",
+    color: "#1e3f7a",
+    short: "Cadran bleu dégradé strié, index luminescents, date à 3 h.",
+    desc: "Un bleu profond qui s'éclaircit vers le centre et change selon la lumière. Index luminescents, date à 3 h et bracelet acier intégré au boîtier : la plus remarquée de la collection.",
+    highlights: ["Cadran bleu dégradé strié", "Index luminescents", "Bracelet acier intégré"],
+    specs: { Boîtier: "Acier 316L, 41 mm", Cadran: "Bleu dégradé strié", Mouvement: "Automatique", Verre: "Anti-rayures", Bracelet: "Acier 316L intégré", Étanchéité: "5 ATM" },
   },
   {
     id: "riviera-blanc",
     name: "Riviera Blanc",
-    tag: "Sport-chic",
+    tag: "Sport-chic · Bracelet acier",
     price: 189,
-    old: 239,
+    old: 249,
     img: "images/riviera-blanc.webp",
     variant: "riviera",
-    color: "#e9e9e6",
-    short: "Cadran blanc strié, boîtier coussin, guichet date.",
-    desc: "La discrétion comme signature. Son cadran blanc strié horizontalement capte la lumière avec subtilité, et son boîtier coussin aux flancs polis s'intègre au bracelet dans une seule ligne fluide.",
-    highlights: ["Cadran strié horizontal", "Boîtier coussin intégré", "Date à 3 h"],
-    specs: { Boîtier: "Acier 316L, 40 mm", Cadran: "Blanc strié", Mouvement: "Automatique", Verre: "Anti-rayures", Bracelet: "Acier 316L intégré", Étanchéité: "5 ATM" },
+    color: "#ecebe7",
+    short: "Cadran blanc strié, boîtier coussin, date à 3 h.",
+    desc: "La discrétion comme signature. Son cadran blanc strié capte la lumière avec subtilité, et son boîtier coussin aux flancs polis se prolonge dans le bracelet en une seule ligne. Aussi juste au bureau que le week-end.",
+    highlights: ["Cadran blanc strié horizontal", "Boîtier coussin poli et brossé", "Date à 3 h"],
+    specs: { Boîtier: "Acier 316L, 41 mm", Cadran: "Blanc strié", Mouvement: "Automatique", Verre: "Anti-rayures", Bracelet: "Acier 316L intégré", Étanchéité: "5 ATM" },
   },
   {
-    id: "riviera-bleu",
-    name: "Riviera Bleu",
-    tag: "Sport-chic",
-    price: 189,
-    old: 239,
+    id: "riviera-noir",
+    name: "Riviera Noir",
+    tag: "Sport · Bracelet caoutchouc",
+    price: 199,
+    old: 259,
     badge: "Nouveau",
-    img: "images/riviera-bleu.webp",
+    img: "images/riviera-noir.webp",
     variant: "riviera",
-    color: "#1e3f7a",
-    short: "Cadran bleu dégradé strié, index luminescents.",
-    desc: "Un bleu profond qui s'éclaircit vers le centre et change selon la lumière. Index luminescents, date à 3 h et bracelet intégré : la plus remarquée des trois.",
-    highlights: ["Cadran bleu dégradé", "Index luminescents", "Date à 3 h"],
-    specs: { Boîtier: "Acier 316L, 40 mm", Cadran: "Bleu dégradé strié", Mouvement: "Automatique", Verre: "Anti-rayures", Bracelet: "Acier 316L intégré", Étanchéité: "5 ATM" },
+    color: "#151515",
+    short: "Cadran noir quadrillé, chiffres arabes, bracelet caoutchouc.",
+    desc: "La version la plus sportive. Cadran noir à motif quadrillé, grands chiffres arabes luminescents et bracelet caoutchouc souple : légère au poignet, elle se porte aussi bien en ville qu'en vacances.",
+    highlights: ["Cadran noir quadrillé", "Chiffres arabes luminescents", "Bracelet caoutchouc confortable"],
+    specs: { Boîtier: "Acier 316L, 41 mm", Cadran: "Noir quadrillé", Mouvement: "Automatique", Verre: "Anti-rayures", Bracelet: "Caoutchouc", Étanchéité: "5 ATM" },
   },
 ];
 
@@ -57,7 +59,7 @@ const priceHTML = (p) => `${euro(p.price)}${p.old ? ` <s>${euro(p.old)}</s> <spa
 
 /* ---------- Rendu ---------- */
 function renderHero() {
-  const order = ["riviera-blanc", "chrono-panda", "riviera-bleu"].map(byId);
+  const order = ["riviera-blanc", "riviera-bleu", "riviera-noir"].map(byId);
   $("[data-hero]").innerHTML = order.map((p, i) =>
     `<button class="hero__watch hero__watch--${i}" data-open="${p.id}" aria-label="Voir ${p.name}"><img src="${p.img}" alt="Montre DEHA ${p.name}" /></button>`
   ).join("");

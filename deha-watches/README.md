@@ -5,7 +5,7 @@ Site vitrine / boutique statique (HTML, CSS, JS, sans build).
 - `index.html` : structure de la page
 - `style.css` : design
 - `app.js` : les 3 montres (tableau `PRODUCTS`), fiche produit, comparatif, panier
-- `images/` : photos des montres (`chrono-panda.webp`, `riviera-blanc.webp`, `riviera-bleu.webp`)
+- `images/` : photos des montres (`riviera-bleu.webp`, `riviera-blanc.webp`, `riviera-noir.webp`)
 
 ## Modifier une montre
 
@@ -17,3 +17,5 @@ fichier dans `images/` (fond blanc de préférence).
 Les avis clients de `index.html` sont des exemples, à remplacer par de vrais avis.
 
 Voir le site en local : `python3 -m http.server` dans ce dossier, puis http://localhost:8000
+
+`NOTES-reference.md` : relevé du site mosawatches.fr (structure, prix, caractéristiques) qui a servi d'inspiration.

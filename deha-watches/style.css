@@ -128,7 +128,7 @@ em { font-style: italic; color: var(--gold-dark); }
 .showcase__media img { width: 92%; height: auto; }
 .showcase h2 { font-size: clamp(2.6rem, 5vw, 4rem); margin-bottom: 18px; }
 .showcase__text > p:not(.eyebrow) { color: var(--muted); font-size: 1.02rem; max-width: 500px; }
-.showcase--dark { background: #0d1a33 !important; color: #fff; }
+.showcase--dark { background: var(--ink) !important; color: #fff; }
 .showcase--dark .showcase__text > p:not(.eyebrow) { color: rgba(255,255,255,.72); }
 .showcase--dark .eyebrow { color: var(--gold); }
 .showcase--dark .price s { color: rgba(255,255,255,.55); }
@@ -215,6 +215,8 @@ em { font-style: italic; color: var(--gold-dark); }
 .qty--sm { margin-top: 6px; }
 .qty--sm button { width: 28px; height: 28px; font-size: .95rem; }
 .qty--sm span { font-size: .85rem; }
+.assure { list-style: none; padding: 16px 18px; margin: 0 0 20px; background: var(--cream); border-radius: 12px; display: grid; gap: 6px; font-size: .84rem; }
+.assure li::before { content: "✓ "; color: var(--gold-dark); }
 .specs { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
 .specs li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: .86rem; }
 .specs li span:first-child { color: var(--muted); }
